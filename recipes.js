@@ -33,21 +33,19 @@ let recipeName = recipes[recipeIndex].name;
 let portionSelection = recipes[recipeIndex].portions;
 
 const portionDiv = document.body.querySelector('#portions');
-const portionButton1 = portionDiv.querySelector('#two-portions');
-const portionButton2 = portionDiv.querySelector('#three-portions');
-const portionButton3 = portionDiv.querySelector('#four-portions');
-portionButton1.addEventListener('click', () => {
-    portionSelection = parseInt(portionButton1.innerHTML);
-    updateIngredientList(recipeIndex, portionSelection);
-});
-portionButton2.addEventListener('click', () => {
-    portionSelection = parseInt(portionButton2.innerHTML);
-    updateIngredientList(recipeIndex, portionSelection);
-});
-portionButton3.addEventListener('click', () => {
-    portionSelection = parseInt(portionButton3.innerHTML);
-    updateIngredientList(recipeIndex, portionSelection);
-});
+const portionsButtons = portionDiv.querySelectorAll('.portions-button');
+
+portionsButtons.forEach(item => {
+    item.addEventListener('click', () => {
+        portionSelection = parseInt(item.innerHTML);
+        updateIngredientList(recipeIndex, portionSelection);
+        portionsButtons.forEach(item => {
+            item.classList.remove('selected-button');
+        })
+        item.classList.add('selected-button');
+    })
+})
+
 
 
 function UpdateRecipeIndex() {

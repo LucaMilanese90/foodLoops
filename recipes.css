@@ -16,6 +16,6 @@
     height: auto;
 }
 
-#portions button {
+.selected-button {
     background-color: orangered;
 }
