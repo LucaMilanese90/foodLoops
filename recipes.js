@@ -1,7 +1,7 @@
 const recipes = [
     {
         country: 'Italy',
-        name: 'another carbonara',
+        name: 'risotto',
         ingredients: ['eggs', 'pecorino cheese', 'pasta', 'pepper', 'guanciale'],
         quantity: [2, 35, 200, 'qb', 80],
         unitMeasure: ['', 'g', 'g', '', 'g'],
@@ -19,7 +19,7 @@ const recipes = [
     },
     {
         country: 'Italy',
-        name: 'third recipe',
+        name: 'lasagne',
         ingredients: ['eggs', 'pecorino cheese', 'pasta', 'pepper', 'guanciale'],
         quantity: [2, 35, 200, 'qb', 80],
         unitMeasure: ['', 'g', 'g', '', 'g'],
@@ -30,19 +30,22 @@ const recipes = [
 
 let portionSelection = 2;
 let recipeName = 'another carbonara';
+let recipeIndex = parseInt(Math.random() * (3 - 0) + 0);
 
-const recipeIndex = recipes.findIndex(x => x.name === recipeName);
+function UpdateRecipeIndex() {
+    recipes.findIndex(x => x.name === recipeName);
+};
 
-function updateIngredientList(index, portionSelection) {
-    for (let i = 0; i < recipes[index].ingredients.length; i++) {
+function updateIngredientList(recipeIndex, portionSelection) {
+    for (let i = 0; i < recipes[recipeIndex].ingredients.length; i++) {
         let updatedQuantity;
-        let updatedUnitMeasure = recipes[index].unitMeasure[i];
-        let updatedIngredient = recipes[index].ingredients[i];
+        let updatedUnitMeasure = recipes[recipeIndex].unitMeasure[i];
+        let updatedIngredient = recipes[recipeIndex].ingredients[i];
 
-        if ((typeof recipes[index].quantity[i]) != 'number') {
-            updatedQuantity = recipes[index].quantity[i];
+        if ((typeof recipes[recipeIndex].quantity[i]) != 'number') {
+            updatedQuantity = recipes[recipeIndex].quantity[i];
         } else {
-            updatedQuantity = parseInt(recipes[index].quantity[i] * portionSelection / recipes[recipeIndex].portions);
+            updatedQuantity = parseInt(recipes[recipeIndex].quantity[i] * portionSelection / recipes[recipeIndex].portions);
         }
 
         const ingredientListDiv = document.body.querySelector('#ingredients');
@@ -53,23 +56,23 @@ function updateIngredientList(index, portionSelection) {
     }
 };
 
-function updateMainImageAndTitle(index) {
+function updateMainImageAndTitle(recipeIndex) {
     const ingredientListDiv = document.body.querySelector('#recipe-main');
     const mainImage = ingredientListDiv.querySelector('img');
-    mainImage.src = recipes[index].picture;
-    mainImage.alt = recipes[index].name;
+    mainImage.src = recipes[recipeIndex].picture;
+    mainImage.alt = recipes[recipeIndex].name;
     const mainTitle = ingredientListDiv.querySelector('#recipe-main-title');
-    mainTitle.innerHTML = recipes[index].name;
+    mainTitle.innerHTML = recipes[recipeIndex].name;
 }
 
-function updateSecondaryImageAndTitle(index) {
+function updateSecondaryImageAndTitle(recipeIndex) {
     const moreRecipes = document.body.querySelector('#more-recipes');
     const recipe1 = moreRecipes.querySelector('.recipe1');
     const recipe2 = moreRecipes.querySelector('.recipe2');
-    recipe1.querySelector('img').src = recipes[index].picture;
-    recipe1.querySelector('h3').innerHTML = recipes[index].name;
-    recipe2.querySelector('img').src = recipes[index].picture;
-    recipe2.querySelector('h3').innerHTML = recipes[index].name;
+    recipe1.querySelector('img').src = recipes[(recipeIndex + 1) % 3].picture;
+    recipe1.querySelector('h3').innerHTML = recipes[(recipeIndex + 1) % 3].name;
+    recipe2.querySelector('img').src = recipes[(recipeIndex + 2) % 3].picture;
+    recipe2.querySelector('h3').innerHTML = recipes[(recipeIndex + 2) % 3].name;
 }
 
 
