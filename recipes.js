@@ -93,16 +93,26 @@ function updateMainImageAndTitle(recipeIndex) {
     mainTitle.innerHTML = recipes[recipeIndex].name;
 }
 
+// function updateSecondaryImageAndTitle(recipeIndex) {
+//     const moreRecipes = document.body.querySelector('#more-recipes');
+//     const recipe1 = moreRecipes.querySelector('.recipe1');
+//     const recipe2 = moreRecipes.querySelector('.recipe2');
+//     recipe1.querySelector('img').src = recipes[(recipeIndex + 1) % 3].picture;
+//     recipe1.querySelector('h3').innerHTML = recipes[(recipeIndex + 1) % 3].name;
+//     recipe2.querySelector('img').src = recipes[(recipeIndex + 2) % 3].picture;
+//     recipe2.querySelector('h3').innerHTML = recipes[(recipeIndex + 2) % 3].name;
+// }
+
 function updateSecondaryImageAndTitle(recipeIndex) {
     const moreRecipes = document.body.querySelector('#more-recipes');
-    const recipe1 = moreRecipes.querySelector('.recipe1');
-    const recipe2 = moreRecipes.querySelector('.recipe2');
-    recipe1.querySelector('img').src = recipes[(recipeIndex + 1) % 3].picture;
-    recipe1.querySelector('h3').innerHTML = recipes[(recipeIndex + 1) % 3].name;
-    recipe2.querySelector('img').src = recipes[(recipeIndex + 2) % 3].picture;
-    recipe2.querySelector('h3').innerHTML = recipes[(recipeIndex + 2) % 3].name;
+    const alternativeRecipes = moreRecipes.querySelectorAll('.alternative-recipes');
+    let i = 1;
+    alternativeRecipes.forEach(item => {
+        item.querySelector('img').src = recipes[(recipeIndex + i) % recipes.length].picture;
+        item.querySelector('h3').innerHTML = recipes[(recipeIndex + i) % recipes.length].name;
+        i++;
+    })
 }
-
 
 
 updateIngredientList(recipeIndex, portionSelection);
