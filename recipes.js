@@ -33,7 +33,7 @@ let recipeName = 'another carbonara';
 
 const recipeIndex = recipes.findIndex(x => x.name === recipeName);
 
-function createIngredientList(index, portionSelection) {
+function updateIngredientList(index, portionSelection) {
     for (let i = 0; i < recipes[index].ingredients.length; i++) {
         let updatedQuantity;
         let updatedUnitMeasure = recipes[index].unitMeasure[i];
@@ -53,15 +53,27 @@ function createIngredientList(index, portionSelection) {
     }
 };
 
-function addImageAndTitle(index) {
+function updateMainImageAndTitle(index) {
     const ingredientListDiv = document.body.querySelector('#recipe-main');
-    const mainImage = ingredientListDiv.querySelector('#recipe-main-image');
+    const mainImage = ingredientListDiv.querySelector('img');
     mainImage.src = recipes[index].picture;
     mainImage.alt = recipes[index].name;
     const mainTitle = ingredientListDiv.querySelector('#recipe-main-title');
     mainTitle.innerHTML = recipes[index].name;
 }
 
+function updateSecondaryImageAndTitle(index) {
+    const moreRecipes = document.body.querySelector('#more-recipes');
+    const recipe1 = moreRecipes.querySelector('.recipe1');
+    const recipe2 = moreRecipes.querySelector('.recipe2');
+    recipe1.querySelector('img').src = recipes[index].picture;
+    recipe1.querySelector('h3').innerHTML = recipes[index].name;
+    recipe2.querySelector('img').src = recipes[index].picture;
+    recipe2.querySelector('h3').innerHTML = recipes[index].name;
+}
 
-createIngredientList(recipeIndex, portionSelection);
-addImageAndTitle(recipeIndex);
+
+
+updateIngredientList(recipeIndex, portionSelection);
+updateMainImageAndTitle(recipeIndex);
+updateSecondaryImageAndTitle(recipeIndex);
