@@ -14,7 +14,7 @@ const recipes = [
         ingredients: ['eggs', 'pecorino cheese', 'pasta', 'pepper', 'guanciale'],
         quantity: [2, 35, 200, 'qb', 80],
         unitMeasure: ['', 'g', 'g', '', 'g'],
-        portions: 2,
+        portions: 1,
         picture: 'https://images.unsplash.com/photo-1579631542720-3a87824fff86?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80'
     },
     {
@@ -23,20 +23,40 @@ const recipes = [
         ingredients: ['eggs', 'pecorino cheese', 'pasta', 'pepper', 'guanciale'],
         quantity: [2, 35, 200, 'qb', 80],
         unitMeasure: ['', 'g', 'g', '', 'g'],
-        portions: 2,
+        portions: 3,
         picture: 'https://images.unsplash.com/photo-1614961909013-1e2212a2ca87?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80'
     }
 ];
 
-let portionSelection = 2;
-let recipeName = 'another carbonara';
 let recipeIndex = parseInt(Math.random() * (3 - 0) + 0);
+let recipeName = recipes[recipeIndex].name;
+let portionSelection = recipes[recipeIndex].portions;
+
+const portionDiv = document.body.querySelector('#portions');
+const portionButton1 = portionDiv.querySelector('#two-portions');
+const portionButton2 = portionDiv.querySelector('#three-portions');
+const portionButton3 = portionDiv.querySelector('#four-portions');
+portionButton1.addEventListener('click', () => {
+    portionSelection = parseInt(portionButton1.innerHTML);
+    updateIngredientList(recipeIndex, portionSelection);
+});
+portionButton2.addEventListener('click', () => {
+    portionSelection = parseInt(portionButton2.innerHTML);
+    updateIngredientList(recipeIndex, portionSelection);
+});
+portionButton3.addEventListener('click', () => {
+    portionSelection = parseInt(portionButton3.innerHTML);
+    updateIngredientList(recipeIndex, portionSelection);
+});
+
 
 function UpdateRecipeIndex() {
     recipes.findIndex(x => x.name === recipeName);
 };
 
 function updateIngredientList(recipeIndex, portionSelection) {
+    const ingredientListDiv = document.body.querySelector('#ingredients');
+    ingredientListDiv.innerHTML = '';
     for (let i = 0; i < recipes[recipeIndex].ingredients.length; i++) {
         let updatedQuantity;
         let updatedUnitMeasure = recipes[recipeIndex].unitMeasure[i];
@@ -48,7 +68,6 @@ function updateIngredientList(recipeIndex, portionSelection) {
             updatedQuantity = parseInt(recipes[recipeIndex].quantity[i] * portionSelection / recipes[recipeIndex].portions);
         }
 
-        const ingredientListDiv = document.body.querySelector('#ingredients');
         const listItem = document.createElement('li');
         listItem.classList.add('individual-ingredient');
         listItem.innerHTML = `${updatedQuantity}${updatedUnitMeasure} ${updatedIngredient}`;

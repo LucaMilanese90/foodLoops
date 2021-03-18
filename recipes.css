@@ -6,10 +6,6 @@
     text-align: center;
 }
 
-h2 {
-
-}
-
 #recipe-main img {
     width: 400px;
     height: auto;
@@ -18,4 +14,8 @@ h2 {
 #more-recipes img {
     width: 200px;
     height: auto;
+}
+
+#portions button {
+    background-color: orangered;
 }
