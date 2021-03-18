@@ -9,7 +9,8 @@
 /* HEADER */
 
 header {
-    height: 60px;
+    /*height: 60px;*/
+    /*Hanna: "I'll handle that in the navbar.css"*/
 }
 
 #main {

@@ -1,6 +1,7 @@
 nav {
     height: 60px;
     display: flex;
+    justify-content: space-between;
 }
 
 .logo {
@@ -8,4 +9,37 @@ nav {
     width: 40px;
     margin: 10px;
     background-color: blue;
+}
+
+.hamburger.nav-closed {
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+    background-image: url("./img/hamburger.svg");
+    background-position: center;
+    background-size: contain;
+}
+
+.nav-links.nav-closed {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    background-color: blueviolet;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.nav-links li {
+    padding: 10px;
+}
+
+.nav-links li a{
+    font-size: 14px;
+    vertical-align: middle;
 }
