@@ -1,0 +1,11 @@
+nav {
+    height: 60px;
+    display: flex;
+}
+
+.logo {
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+    background-color: blue;
+}
