@@ -11,9 +11,9 @@ const recipes = [
     {
         country: 'Italy',
         name: 'carbonara',
-        ingredients: ['eggs', 'pecorino cheese', 'pasta', 'pepper', 'guanciale'],
-        quantity: [2, 35, 200, 'qb', 80],
-        unitMeasure: ['', 'g', 'g', '', 'g'],
+        ingredients: ['eggs', 'pecorino cheese', 'pasta', 'guanciale', 'black pepper'],
+        quantity: [2, 35, 200, 80, ''],
+        unitMeasure: ['', 'g', 'g', 'g', ''],
         portions: 1,
         picture: 'https://images.unsplash.com/photo-1579631542720-3a87824fff86?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80'
     },
@@ -28,6 +28,7 @@ const recipes = [
     }
 ];
 
+// setting the main recipe randomly on pageload
 let recipeIndex = parseInt(Math.random() * (3 - 0) + 0);
 let recipeName = recipes[recipeIndex].name;
 let portionSelection = recipes[recipeIndex].portions;
@@ -35,31 +36,41 @@ let portionSelection = recipes[recipeIndex].portions;
 const portionDiv = document.body.querySelector('#portions');
 const portionsButtons = portionDiv.querySelectorAll('.portions-button');
 
+//  added event listener to lokk for clik for all buttons with class '.portions-button' 
 portionsButtons.forEach(item => {
     item.addEventListener('click', () => {
+        // retriving user selection for number of portion after click
         portionSelection = parseInt(item.innerHTML);
+        // running function to update ingredient list quantity
         updateIngredientList(recipeIndex, portionSelection);
+        // removing the class '.selected-button' from every '.portions-button'
         portionsButtons.forEach(item => {
             item.classList.remove('selected-button');
         })
+        // adding the class '.selected-button' only to the button clicked
         item.classList.add('selected-button');
     })
 })
 
 
-
+// currently NOT IN USE
+// refresh the index of the recipe object inside the recipes array
+// searching a match in every object.name with the recipe name
 function UpdateRecipeIndex() {
     recipes.findIndex(x => x.name === recipeName);
 };
 
+// creating string for recipe ingredient list
 function updateIngredientList(recipeIndex, portionSelection) {
     const ingredientListDiv = document.body.querySelector('#ingredients');
+    // resetting current ingredient list content
     ingredientListDiv.innerHTML = '';
     for (let i = 0; i < recipes[recipeIndex].ingredients.length; i++) {
         let updatedQuantity;
         let updatedUnitMeasure = recipes[recipeIndex].unitMeasure[i];
         let updatedIngredient = recipes[recipeIndex].ingredients[i];
 
+        // excluding quantity update for non-numeric quantity i.e. black pepper
         if ((typeof recipes[recipeIndex].quantity[i]) != 'number') {
             updatedQuantity = recipes[recipeIndex].quantity[i];
         } else {
