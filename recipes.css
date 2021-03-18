@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 30px;
+    text-align: center;
+}
+
+h2 {
+
+}
+
+#recipe-main-image {
+    width: 350px;
+    height: auto;
+}
+
