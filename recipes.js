@@ -1,6 +1,6 @@
 const recipes = [
     {
-        country: 'Italy',
+        country: 'italy',
         name: 'risotto',
         ingredients: ['eggs', 'pecorino cheese', 'pasta', 'pepper', 'guanciale'],
         quantity: [2, 35, 200, 'qb', 80],
@@ -9,7 +9,7 @@ const recipes = [
         picture: 'https://images.unsplash.com/photo-1595908129746-57ca1a63dd4d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80'
     },
     {
-        country: 'Italy',
+        country: 'italy',
         name: 'carbonara',
         ingredients: ['eggs', 'pecorino cheese', 'pasta', 'guanciale', 'black pepper'],
         quantity: [2, 35, 200, 80, ''],
@@ -18,7 +18,7 @@ const recipes = [
         picture: 'https://images.unsplash.com/photo-1579631542720-3a87824fff86?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80'
     },
     {
-        country: 'Italy',
+        country: 'italy',
         name: 'lasagne',
         ingredients: ['eggs', 'pecorino cheese', 'pasta', 'pepper', 'guanciale'],
         quantity: [2, 35, 200, 'qb', 80],
@@ -36,8 +36,15 @@ let portionSelection = recipes[recipeIndex].portions;
 const portionDiv = document.body.querySelector('#portions');
 const portionsButtons = portionDiv.querySelectorAll('.portions-button');
 
-//  added event listener to lokk for clik for all buttons with class '.portions-button' 
+
+
+// cycling through each portion button
 portionsButtons.forEach(item => {
+    // adding the class '.selected-button' on page load to the default portion size
+    if (item.innerHTML == portionSelection) {
+        item.classList.add('selected-button');
+    };
+    //  added event listener to lokk for clik for all buttons with class '.portions-button' 
     item.addEventListener('click', () => {
         // retriving user selection for number of portion after click
         portionSelection = parseInt(item.innerHTML);
@@ -154,5 +161,6 @@ updateSecondaryImageAndTitle(recipeIndex);
 
 
 // TODO LIST:
-// Pre-select portions button based on recipe
+
 // Modify function to account for single and plural i.e egg - eggs
+// Modify function to avoid 0 quantity output on signle portion
