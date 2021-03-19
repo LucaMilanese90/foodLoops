@@ -12,14 +12,18 @@ navHome.innerHTML = "<a>Home</a>";
 navLinks.appendChild(navHome);
 
 const navRecipe = document.createElement("li");
-navRecipe.classList.add("nav-recipe");
+navRecipe.classList.add("in");
 navRecipe.innerHTML = "<a>Cook at home</a>";
 navLinks.appendChild(navRecipe);
 
 const navRestaurant = document.createElement("li");
-navRestaurant.classList.add("nav-restaurant");
+navRestaurant.classList.add("out");
 navRestaurant.innerHTML = "<a>Eat out</a>";
 navLinks.appendChild(navRestaurant);
+
+navLinks.addEventListener("click", function (event) {
+    console.log(event.target.className);
+})
 
 
 //getting the nav element
