@@ -1,3 +1,10 @@
+header {
+    position: fixed;
+    width: 100%;
+    border-bottom: 2px solid green;
+    background-color: blueviolet;
+}
+
 nav {
     height: 60px;
     display: flex;
