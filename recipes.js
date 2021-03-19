@@ -56,8 +56,8 @@ portionsButtons.forEach(item => {
 // currently NOT IN USE
 // refresh the index of the recipe object inside the recipes array
 // searching a match in every object.name with the recipe name
-function UpdateRecipeIndex() {
-    recipes.findIndex(x => x.name === recipeName);
+function UpdateRecipeIndex(recipeName) {
+    return recipes.findIndex(x => x.name === recipeName);
 };
 
 // creating string for recipe ingredient list
@@ -115,6 +115,44 @@ function updateSecondaryImageAndTitle(recipeIndex) {
 }
 
 
+const moreRecipes = document.body.querySelector('#more-recipes');
+const alternativeRecipes = moreRecipes.querySelectorAll('.alternative-recipes');
+
+//  added event listener to lokk for clik for all divs with class '.alternative-recipes' 
+alternativeRecipes.forEach(item => {
+    item.addEventListener('click', () => {
+        // retriving user selection for the recipe name after click
+        recipeName = item.querySelector('h3').innerHTML;
+        // running function to update the index of the recipe in recipes array
+        recipeIndex = (UpdateRecipeIndex(recipeName));
+        // updating secondary and main section
+        updateSecondaryImageAndTitle(recipeIndex);
+        updateMainImageAndTitle(recipeIndex);
+        // !!!REMEMBER TO COME BACK TO THIS LINE!!!
+        portionSelection = recipes[recipeIndex].portions;
+        updateIngredientList(recipeIndex, portionSelection);
+        // scroll the window to the beginning of recipe-main div
+        const ingredientListDiv = document.body.querySelector('#recipe-main');
+        window.scrollTo({
+            top: ingredientListDiv.offsetTop,
+            left: 0,
+            behavior: 'smooth'
+        });
+    })
+})
+
+
+
 updateIngredientList(recipeIndex, portionSelection);
 updateMainImageAndTitle(recipeIndex);
 updateSecondaryImageAndTitle(recipeIndex);
+
+
+
+
+
+
+
+// TODO LIST:
+// Pre-select portions button based on recipe
+// Modify function to account for single and plural i.e egg - eggs

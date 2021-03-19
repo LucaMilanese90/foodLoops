@@ -19,3 +19,9 @@
 .selected-button {
     background-color: orangered;
 }
+
+
+.alternative-recipes {
+    cursor: pointer;
+}
+
