@@ -1,7 +1,5 @@
 const countrySection = document.getElementById('country-selection');
 const inOut = document.getElementById('in-out-selection');
-let inOrOut = '';
-let country = '';
 
 function logVar (a, b) {
     console.log(a,b)

@@ -1,3 +1,6 @@
+let inOrOut = '';
+let country = '';
+
 //getting the header element
 const header = document.querySelector("header");
 
@@ -8,21 +11,28 @@ header.prepend(navLinks);
 
 const navHome = document.createElement("li");
 navHome.classList.add("nav-home");
-navHome.innerHTML = "<a>Home</a>";
+navHome.innerHTML = "Home";
 navLinks.appendChild(navHome);
 
 const navRecipe = document.createElement("li");
 navRecipe.classList.add("in");
-navRecipe.innerHTML = "<a>Cook at home</a>";
+navRecipe.innerHTML = "Cook at home";
 navLinks.appendChild(navRecipe);
 
 const navRestaurant = document.createElement("li");
 navRestaurant.classList.add("out");
-navRestaurant.innerHTML = "<a>Eat out</a>";
+navRestaurant.innerHTML = "Eat out";
 navLinks.appendChild(navRestaurant);
 
 navLinks.addEventListener("click", function (event) {
-    console.log(event.target.className);
+    if(event.target.className === 'nav-home') {
+        window.location.href = "./index.html"
+    } else {
+    inOrOut = event.target.className;
+    console.log(inOrOut);
+    window.location.href = "./index.html#country-selection";
+    // countrySection.scrollIntoView({behavior: 'smooth'});
+    }
 })
 
 
