@@ -1,6 +1,5 @@
-const recipes = [
+const italian = [
     {
-        country: 'italy',
         name: 'risotto',
         ingredients: ['eggs', 'pecorino cheese', 'pasta', 'pepper', 'guanciale'],
         quantity: [2, 35, 200, 'qb', 80],
@@ -9,7 +8,6 @@ const recipes = [
         picture: 'https://images.unsplash.com/photo-1595908129746-57ca1a63dd4d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80'
     },
     {
-        country: 'italy',
         name: 'carbonara',
         ingredients: ['eggs', 'pecorino cheese', 'pasta', 'guanciale', 'black pepper'],
         quantity: [2, 35, 200, 80, ''],
@@ -18,25 +16,62 @@ const recipes = [
         picture: 'https://images.unsplash.com/photo-1579631542720-3a87824fff86?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80'
     },
     {
-        country: 'italy',
         name: 'lasagne',
         ingredients: ['eggs', 'pecorino cheese', 'pasta', 'pepper', 'guanciale'],
         quantity: [2, 35, 200, 'qb', 80],
         unitMeasure: ['', 'g', 'g', '', 'g'],
         portions: 3,
         picture: 'https://images.unsplash.com/photo-1614961909013-1e2212a2ca87?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80'
-    }
-];
+    }];
+
+const greek = [{
+    name: 'something yummy',
+    ingredients: ['aaa', 'bbb', 'ccc', 'ddd', 'eee'],
+    quantity: [2, 35, 200, 'qb', 80],
+    unitMeasure: ['', 'g', 'g', '', 'g'],
+    portions: 2,
+    picture: 'https://images.unsplash.com/photo-1537215781824-73d7761029e1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1515&q=80'
+},
+{
+    name: 'something more yummy',
+    ingredients: ['aaa', 'bbb', 'ccc', 'ddd', 'eee'],
+    quantity: [2, 35, 200, 'qb', 80],
+    unitMeasure: ['', 'g', 'g', '', 'g'],
+    portions: 3,
+    picture: 'https://images.unsplash.com/photo-1505576633757-0ac1084af824?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=975&q=80'
+},
+{
+    name: 'something even more yummy',
+    ingredients: ['aaa', 'bbb', 'ccc', 'ddd', 'eee'],
+    quantity: [2, 35, 200, 'qb', 80],
+    unitMeasure: ['', 'g', 'g', '', 'g'],
+    portions: 4,
+    picture: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1650&q=80'
+}];
+
+
 
 // setting the main recipe randomly on pageload
+let cuisineSelection = greek;
 let recipeIndex = parseInt(Math.random() * (3 - 0) + 0);
-let recipeName = recipes[recipeIndex].name;
-let portionSelection = recipes[recipeIndex].portions;
+let recipeName = cuisineSelection[recipeIndex].name;
+let portionSelection = cuisineSelection[recipeIndex].portions;
 
 const portionDiv = document.body.querySelector('#portions');
 const portionsButtons = portionDiv.querySelectorAll('.portions-button');
 
 
+function updateDefaultButtonQuantity() {
+    const portionDiv = document.body.querySelector('#portions');
+    const portionsButtons = portionDiv.querySelectorAll('.portions-button'); portionsButtons.forEach(item => {
+        // adding the class '.selected-button' on page load to the default portion size
+        if (item.innerHTML == portionSelection) {
+            item.classList.add('selected-button');
+        } else {
+            item.classList.remove('selected-button');
+        }
+    })
+};
 
 // cycling through each portion button
 portionsButtons.forEach(item => {
@@ -49,7 +84,7 @@ portionsButtons.forEach(item => {
         // retriving user selection for number of portion after click
         portionSelection = parseInt(item.innerHTML);
         // running function to update ingredient list quantity
-        updateIngredientList(recipeIndex, portionSelection);
+        updateIngredientList(cuisineSelection, recipeIndex, portionSelection);
         // removing the class '.selected-button' from every '.portions-button'
         portionsButtons.forEach(item => {
             item.classList.remove('selected-button');
@@ -64,24 +99,25 @@ portionsButtons.forEach(item => {
 // refresh the index of the recipe object inside the recipes array
 // searching a match in every object.name with the recipe name
 function UpdateRecipeIndex(recipeName) {
-    return recipes.findIndex(x => x.name === recipeName);
+    return cuisineSelection.findIndex(x => x.name === recipeName);
 };
 
+
 // creating string for recipe ingredient list
-function updateIngredientList(recipeIndex, portionSelection) {
+function updateIngredientList(cuisineSelection, recipeIndex, portionSelection) {
     const ingredientListDiv = document.body.querySelector('#ingredients');
     // resetting current ingredient list content
     ingredientListDiv.innerHTML = '';
-    for (let i = 0; i < recipes[recipeIndex].ingredients.length; i++) {
+    for (let i = 0; i < cuisineSelection[recipeIndex].ingredients.length; i++) {
         let updatedQuantity;
-        let updatedUnitMeasure = recipes[recipeIndex].unitMeasure[i];
-        let updatedIngredient = recipes[recipeIndex].ingredients[i];
+        let updatedUnitMeasure = cuisineSelection[recipeIndex].unitMeasure[i];
+        let updatedIngredient = cuisineSelection[recipeIndex].ingredients[i];
 
         // excluding quantity update for non-numeric quantity i.e. black pepper
-        if ((typeof recipes[recipeIndex].quantity[i]) != 'number') {
-            updatedQuantity = recipes[recipeIndex].quantity[i];
+        if ((typeof cuisineSelection[recipeIndex].quantity[i]) != 'number') {
+            updatedQuantity = cuisineSelection[recipeIndex].quantity[i];
         } else {
-            updatedQuantity = parseInt(recipes[recipeIndex].quantity[i] * portionSelection / recipes[recipeIndex].portions);
+            updatedQuantity = parseInt(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions);
         }
 
         const listItem = document.createElement('li');
@@ -94,10 +130,10 @@ function updateIngredientList(recipeIndex, portionSelection) {
 function updateMainImageAndTitle(recipeIndex) {
     const ingredientListDiv = document.body.querySelector('#recipe-main');
     const mainImage = ingredientListDiv.querySelector('img');
-    mainImage.src = recipes[recipeIndex].picture;
-    mainImage.alt = recipes[recipeIndex].name;
+    mainImage.src = cuisineSelection[recipeIndex].picture;
+    mainImage.alt = cuisineSelection[recipeIndex].name;
     const mainTitle = ingredientListDiv.querySelector('#recipe-main-title');
-    mainTitle.innerHTML = recipes[recipeIndex].name;
+    mainTitle.innerHTML = cuisineSelection[recipeIndex].name;
 }
 
 // function updateSecondaryImageAndTitle(recipeIndex) {
@@ -115,8 +151,8 @@ function updateSecondaryImageAndTitle(recipeIndex) {
     const alternativeRecipes = moreRecipes.querySelectorAll('.alternative-recipes');
     let i = 1;
     alternativeRecipes.forEach(item => {
-        item.querySelector('img').src = recipes[(recipeIndex + i) % recipes.length].picture;
-        item.querySelector('h3').innerHTML = recipes[(recipeIndex + i) % recipes.length].name;
+        item.querySelector('img').src = cuisineSelection[(recipeIndex + i) % cuisineSelection.length].picture;
+        item.querySelector('h3').innerHTML = cuisineSelection[(recipeIndex + i) % cuisineSelection.length].name;
         i++;
     })
 }
@@ -136,8 +172,9 @@ alternativeRecipes.forEach(item => {
         updateSecondaryImageAndTitle(recipeIndex);
         updateMainImageAndTitle(recipeIndex);
         // !!!REMEMBER TO COME BACK TO THIS LINE!!!
-        portionSelection = recipes[recipeIndex].portions;
-        updateIngredientList(recipeIndex, portionSelection);
+        portionSelection = cuisineSelection[recipeIndex].portions;
+        updateIngredientList(cuisineSelection, recipeIndex, portionSelection);
+        updateDefaultButtonQuantity();
         // scroll the window to the beginning of recipe-main div
         const ingredientListDiv = document.body.querySelector('#recipe-main');
         window.scrollTo({
@@ -150,7 +187,7 @@ alternativeRecipes.forEach(item => {
 
 
 
-updateIngredientList(recipeIndex, portionSelection);
+updateIngredientList(cuisineSelection, recipeIndex, portionSelection);
 updateMainImageAndTitle(recipeIndex);
 updateSecondaryImageAndTitle(recipeIndex);
 
