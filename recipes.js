@@ -1,8 +1,10 @@
 const italian = [
     {
+        cuisine: 'italian',
+        intro: 'Italian cuisine is bla bla bla...',
         name: 'risotto',
         ingredients: ['eggs', 'pecorino cheese', 'pasta', 'pepper', 'guanciale'],
-        quantity: [2, 35, 200, 'qb', 80],
+        quantity: [2, 35, 200, '', 80],
         unitMeasure: ['', 'g', 'g', '', 'g'],
         portions: 4,
         picture: 'https://images.unsplash.com/photo-1595908129746-57ca1a63dd4d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80'
@@ -18,41 +20,44 @@ const italian = [
     {
         name: 'lasagne',
         ingredients: ['eggs', 'pecorino cheese', 'pasta', 'pepper', 'guanciale'],
-        quantity: [2, 35, 200, 'qb', 80],
+        quantity: [2, 35, 200, '', 80],
         unitMeasure: ['', 'g', 'g', '', 'g'],
         portions: 3,
         picture: 'https://images.unsplash.com/photo-1614961909013-1e2212a2ca87?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80'
     }];
 
-const greek = [{
-    name: 'something yummy',
-    ingredients: ['aaa', 'bbb', 'ccc', 'ddd', 'eee'],
-    quantity: [2, 35, 200, 'qb', 80],
-    unitMeasure: ['', 'g', 'g', '', 'g'],
-    portions: 2,
-    picture: 'https://images.unsplash.com/photo-1537215781824-73d7761029e1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1515&q=80'
-},
-{
-    name: 'something more yummy',
-    ingredients: ['aaa', 'bbb', 'ccc', 'ddd', 'eee'],
-    quantity: [2, 35, 200, 'qb', 80],
-    unitMeasure: ['', 'g', 'g', '', 'g'],
-    portions: 3,
-    picture: 'https://images.unsplash.com/photo-1505576633757-0ac1084af824?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=975&q=80'
-},
-{
-    name: 'something even more yummy',
-    ingredients: ['aaa', 'bbb', 'ccc', 'ddd', 'eee'],
-    quantity: [2, 35, 200, 'qb', 80],
-    unitMeasure: ['', 'g', 'g', '', 'g'],
-    portions: 4,
-    picture: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1650&q=80'
-}];
+const greek = [
+    {
+        cuisine: 'greek',
+        intro: 'Greek cuisine is bla bla bla...',
+        name: 'something yummy',
+        ingredients: ['aaa', 'bbb', 'ccc', 'ddd', 'eee'],
+        quantity: [2, 35, 200, '', 80],
+        unitMeasure: ['', 'g', 'g', '', 'g'],
+        portions: 2,
+        picture: 'https://images.unsplash.com/photo-1537215781824-73d7761029e1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1515&q=80'
+    },
+    {
+        name: 'something more yummy',
+        ingredients: ['aaa', 'bbb', 'ccc', 'ddd', 'eee'],
+        quantity: [2, 35, 200, '', 80],
+        unitMeasure: ['', 'g', 'g', '', 'g'],
+        portions: 3,
+        picture: 'https://images.unsplash.com/photo-1505576633757-0ac1084af824?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=975&q=80'
+    },
+    {
+        name: 'something even more yummy',
+        ingredients: ['aaa', 'bbb', 'ccc', 'ddd', 'eee'],
+        quantity: [2, 35, 200, '', 80],
+        unitMeasure: ['', 'g', 'g', '', 'g'],
+        portions: 4,
+        picture: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1650&q=80'
+    }];
 
 
 
-// setting the main recipe randomly on pageload
 let cuisineSelection = greek;
+// setting the main recipe randomly on pageload
 let recipeIndex = parseInt(Math.random() * (3 - 0) + 0);
 let recipeName = cuisineSelection[recipeIndex].name;
 let portionSelection = cuisineSelection[recipeIndex].portions;
@@ -110,15 +115,18 @@ function updateIngredientList(cuisineSelection, recipeIndex, portionSelection) {
     ingredientListDiv.innerHTML = '';
     for (let i = 0; i < cuisineSelection[recipeIndex].ingredients.length; i++) {
         let updatedQuantity;
-        let updatedUnitMeasure = cuisineSelection[recipeIndex].unitMeasure[i];
-        let updatedIngredient = cuisineSelection[recipeIndex].ingredients[i];
-
         // excluding quantity update for non-numeric quantity i.e. black pepper
         if ((typeof cuisineSelection[recipeIndex].quantity[i]) != 'number') {
             updatedQuantity = cuisineSelection[recipeIndex].quantity[i];
+            // setting minimun quantity to 1 so the parseInt rounding will never output 0
+        } else if (parseInt(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions) === 0) {
+            updatedQuantity = 1;
         } else {
             updatedQuantity = parseInt(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions);
-        }
+        };
+
+        let updatedUnitMeasure = cuisineSelection[recipeIndex].unitMeasure[i];
+        let updatedIngredient = cuisineSelection[recipeIndex].ingredients[i];
 
         const listItem = document.createElement('li');
         listItem.classList.add('individual-ingredient');
@@ -126,6 +134,13 @@ function updateIngredientList(cuisineSelection, recipeIndex, portionSelection) {
         ingredientListDiv.appendChild(listItem);
     }
 };
+
+function updatePageTitleAndIntro(cuisineSelection) {
+    const pageTitle = document.body.querySelector('.country-title');
+    const pageIntro = document.body.querySelector('.country-description');
+    pageTitle.innerHTML = cuisineSelection[0].cuisine;
+    pageIntro.innerHTML = cuisineSelection[0].intro;
+}
 
 function updateMainImageAndTitle(recipeIndex) {
     const ingredientListDiv = document.body.querySelector('#recipe-main');
@@ -190,6 +205,7 @@ alternativeRecipes.forEach(item => {
 updateIngredientList(cuisineSelection, recipeIndex, portionSelection);
 updateMainImageAndTitle(recipeIndex);
 updateSecondaryImageAndTitle(recipeIndex);
+updatePageTitleAndIntro(cuisineSelection)
 
 
 
@@ -200,4 +216,3 @@ updateSecondaryImageAndTitle(recipeIndex);
 // TODO LIST:
 
 // Modify function to account for single and plural i.e egg - eggs
-// Modify function to avoid 0 quantity output on signle portion
