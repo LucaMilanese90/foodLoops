@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* HEADER */
+
+header {
+    height: 60px;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+}
+
+#in-out-selection {
+    background-color: blue;
+    height: calc(100vh - 60px);
+}
+
+#in, #out {
+    height: 50%;
+}
+
+#country-selection {
+    background-color: red;
+    height: calc(100vh - 60px);
+}
+
+.country-card {
+    height: 20%;
+}
