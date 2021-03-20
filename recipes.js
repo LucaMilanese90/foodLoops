@@ -366,3 +366,4 @@ updateSecondaryImageAndTitle(recipeIndex);
 // TODO LIST:
 
 // Modify function to account for single and plural i.e egg - eggs
+// Delete value of input when selecting another input
