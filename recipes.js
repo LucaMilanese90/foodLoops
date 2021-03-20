@@ -127,6 +127,9 @@ portionsButtons.forEach(item => {
     };
     //  added event listener to lokk for clik for all buttons with class '.portions-button' 
     item.addEventListener('click', () => {
+        // resetting the edit button in case 'done' was already selected
+        document.body.querySelector('.done').classList.add('not-visible');
+        document.body.querySelector('.edit').classList.remove('not-visible');
         // retriving user selection for number of portion after click
         portionSelection = parseInt(item.innerHTML);
         // running function to update ingredient list quantity
@@ -182,7 +185,11 @@ function updateIngredientList(cuisineSelection, recipeIndex, portionSelection) {
 
         const ingredientDiv = document.createElement('div');
         ingredientDiv.classList.add('ingredient-div');
-        ingredientDiv.innerHTML = `${updatedUnitMeasure} of ${updatedIngredient}`;
+        if (updatedUnitMeasure == '') {
+            ingredientDiv.innerHTML = `${updatedIngredient}`;
+        } else {
+            ingredientDiv.innerHTML = `${updatedUnitMeasure} of ${updatedIngredient}`;
+        };
         ingredientListDiv.appendChild(ingredientDiv);
 
     }
@@ -213,7 +220,11 @@ function updateIngredientListEditable(cuisineSelection, recipeIndex, portionSele
         // add input.type number and placeholder value to all ingredients quantityDiv
         const quantityInput = document.createElement('input');
         quantityInput.type = 'number';
-        quantityInput.placeholder = parseInt(updatedQuantity);
+        if (typeof updatedQuantity != 'number') {
+            quantityInput.placeholder = '';
+        } else {
+            quantityInput.placeholder = parseInt(updatedQuantity);
+        };
         quantityInput.classList.add('quantity');
         //quantityInput.innerHTML = parseInt(updatedQuantity);
         quantityDiv.appendChild(quantityInput);
@@ -224,7 +235,11 @@ function updateIngredientListEditable(cuisineSelection, recipeIndex, portionSele
 
         const ingredientDiv = document.createElement('div');
         ingredientDiv.classList.add('ingredient-div');
-        ingredientDiv.innerHTML = `${updatedUnitMeasure} of ${updatedIngredient}`;
+        if (updatedUnitMeasure == '') {
+            ingredientDiv.innerHTML = `${updatedIngredient}`;
+        } else {
+            ingredientDiv.innerHTML = `${updatedUnitMeasure} of ${updatedIngredient}`;
+        };
         ingredientListDiv.appendChild(ingredientDiv);
 
     }

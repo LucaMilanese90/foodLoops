@@ -21,6 +21,7 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
 h3 {
     width: 100%;
 }
@@ -29,28 +30,17 @@ h3 {
     display: flex;
     justify-items: center;
     flex-wrap: wrap;
-    width: 30%;
-    /* grid-template-columns: repeat(auto-fill, 100px);
-    text-align: center;
-    grid-template-columns:  150px 300px;
-    grid-template-rows: auto; */
 }
 
 .quantity-div {
     text-align: right;
+    width: 45%;
 }
   
 .ingredient-div {
     text-align: left;
-    height: 100%;
-    width: 40%;
+    width: 45%;
     margin-left: 10px;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 input {
@@ -59,6 +49,18 @@ input {
     border-left-style: hidden;
     border-bottom-style: none;
     text-align: right;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .not-visible {
