@@ -456,6 +456,75 @@ document.body.querySelector('.done').addEventListener('click', () => {
 
 
 
+let mailAddress;
+let mailSubject;
+let mailBody;
+
+// creating strings for mail ingredient list
+function mailIngredientList(cuisineSelection, recipeIndex, portionSelection) {
+
+    let mailIngredient = 'Ingredient list: ';
+    for (let i = 0; i < cuisineSelection[recipeIndex].ingredients.length; i++) {
+
+        let updatedQuantity;
+        // excluding quantity update for non-numeric quantity i.e. black pepper
+        if ((typeof cuisineSelection[recipeIndex].quantity[i]) != 'number') {
+            updatedQuantity = cuisineSelection[recipeIndex].quantity[i];
+            // setting minimun quantity to 1 so the parseInt rounding will never output 0
+        } else if (parseInt(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions) === 0) {
+            updatedQuantity = 1;
+        } else {
+            updatedQuantity = parseInt(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions);
+        };
+
+        let updatedUnitMeasure = cuisineSelection[recipeIndex].unitMeasure[i];
+        let updatedIngredient = cuisineSelection[recipeIndex].ingredients[i];
+
+        if (updatedQuantity === '') {
+            mailIngredient += `${updatedIngredient} - `;
+        } else if (updatedUnitMeasure == '') {
+            mailIngredient += `${updatedQuantity} ${updatedIngredient} - `;
+        } else {
+            mailIngredient += `${updatedQuantity} ${updatedUnitMeasure} of ${updatedIngredient} - `;
+        };
+    }
+    return mailIngredient.slice(0, -3);
+};
+
+function mailCookDirections(cuisineSelection, recipeIndex) {
+    let mailSteps = '------ Recipe steps recap: ';
+    for (let i = 0; i < cuisineSelection[recipeIndex].directions.length; i++) {
+        mailSteps += `(${i + 1}) ${cuisineSelection[recipeIndex].directions[i]}. `
+    }
+    return mailSteps;
+};
+
+
+const emailButton = document.body.querySelector('#email');
+emailButton.addEventListener('click', () => {
+    mailAddress = document.querySelector('.email-address').value;
+    mailSubject = recipeName.charAt(0).toUpperCase() + recipeName.slice(1);
+    mailBody = `${mailIngredientList(cuisineSelection, recipeIndex, portionSelection)}. ${mailCookDirections(cuisineSelection, recipeIndex)}`;
+    sendEmail();
+})
+
+let Email = { send: function (a) { return new Promise(function (n, e) { a.nocache = Math.floor(1e6 * Math.random() + 1), a.Action = "Send"; var t = JSON.stringify(a); Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t, function (e) { n(e) }) }) }, ajaxPost: function (e, n, t) { var a = Email.createCORSRequest("POST", e); a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), a.onload = function () { var e = a.responseText; null != t && t(e) }, a.send(n) }, ajax: function (e, n) { var t = Email.createCORSRequest("GET", e); t.onload = function () { var e = t.responseText; null != n && n(e) }, t.send() }, createCORSRequest: function (e, n) { var t = new XMLHttpRequest; return "withCredentials" in t ? t.open(e, n, !0) : "undefined" != typeof XDomainRequest ? (t = new XDomainRequest).open(e, n) : t = null, t } };
+
+function sendEmail() {
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "wild.foodloops@gmail.com",
+        Password: "jJ#9jvaWH6gJbUdM5WAPu*g6K9wiCLZn",
+        To: mailAddress,
+        From: "wild.foodloops@gmail.com",
+        Subject: mailSubject,
+        Body: mailBody,
+    }).then(alert("mail sent successfully")
+    );
+}
+
+
+
 
 updatePageTitleAndIntro(cuisineSelection)
 updateMainImageAndTitle(recipeIndex);
