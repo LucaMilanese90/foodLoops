@@ -1,10 +1,10 @@
-.map1 {
+map1 {
   position: relative;
   text-align: right;
   height: 265px;
   width: 591px;
 }
-.gmap1 {
+gmap1 {
   overflow: hidden;
   background: none !important;
   height: 265px;
@@ -14,3 +14,12 @@
   width: 400px;
   height: 200px;
 }
+
+#boxcontainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  border: 20px;
+}
+
+
