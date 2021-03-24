@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurant Page</title>
-    <link rel="stylesheet" href="restaurants.css" />
+    <link rel="stylesheet" href="./restaurants.css" />
 </head>
 
 <body>
@@ -13,19 +13,79 @@
         <nav></nav>
     </header>
     <section id="main-restaurant">
-        <div class="country-intro">
-            <h1 class="country-title">México</h1>
-            <p class="country-description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus, deserunt. Suscipit, cum amet?
-                Inventore voluptates dolore eaque facilis laborum ipsam cum, perferendis nisi eos aut maxime adipisci
-                nobis molestiae tenetur voluptatem amet, pariatur porro officia alias tempore, recusandae quisquam
-                accusantium? Dolores aut repudiandae, neque minima, dolorum atque sapiente, sequi eaque natus dicta
-                facere inventore totam repellendus ea! Quisquam libero aliquam iure nesciunt quod consectetur omnis
-                iusto! Quam architecto et cum cumque dolores iusto beatae, velit magnam blanditiis fuga sunt reiciendis
-                autem ad tempore iure vero dignissimos ipsa! Minus ea culpa consectetur, consequuntur aliquam, harum
-                enim alias adipisci perspiciatis, saepe nostrum.
-            </p>
-        </div>
+    <h1 class="country-title"></h1>
+    <p class="country-description"></p>
+    <h2 class="restaurant-title"></h2>
+    <img src="./src.images/Maria Bonita.jpg" alt="Maria Bonita" id="imgRestaurant">
+    <p class="restaurant-description"></p>
+            <div id="map">
+                <iframe width="591" height="265" id="gmap_canvas1" src= "https://maps.google.com/maps?q=maria%20bonita%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no"
+                    marginheight="0" marginwidth="0"></iframe>
+            </div>
+
+            <button id="buttonLink"><a href="https://www.mariabonita.de/" target="_blank">Website</a>
+            </button>
+
+            <div id="boxcontainer">
+                <div>
+                    <img class="smallphoto" src="./src.images/Zapata.jpg" alt="Zapata">
+                </div>
+                <div>
+            <img class="smallphoto" src="./src.images/Tacoriño .jpg" alt="Tacoriño">
+            </div>
+            </div>
+            <script src="restaurants.js"></script>
+    </section>
+
+    <footer id="footer-selection">
+        <button>eat out</button>
+        <button>country selection</button>
+    </footer>
+
+    </body>
+    
+    </html>
+
+
+
+
+
+
+
+
+
+
+        <!--<div class="country-intro">
+            <h1 class="country-title"></h1>
+            <p class="country-description"></p>
+            <h2 class="restaurant-title"></h2>
+            <img src="./src.images/Maria Bonita.jpg" alt="Maria Bonita" id="maria">
+            <p class="restaurant-description"></p>
+                <div id="map1">
+                    <div id="map"><iframe width="591" height="265" id="gmap_canvas1" src="" frameborder="0" scrolling="no"
+                            marginheight="0" marginwidth="0"></iframe>
+                    </div>  
+                    <button id="buttonLink"><a href="https://www.mariabonita.de/" target="_blank">Website</a>
+                    </button>
+        </div>       
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <section id="restaurant-cards">
             <div class="restaurant-card">
                 <h2 class="restaurant-title">Maria Bonita</h2>
@@ -38,8 +98,23 @@
                 <div class="map1">
                     <div class="gmap1"><iframe width="591" height="265" id="gmap_canvas1" src="" frameborder="0"
                             scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                    </div>
+                             </div>
+                              <button id="buttonLink"><a href="https://www.mariabonita.de/" target="_blank">Website</a>
+                </button>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <br>
                 <button id="buttonLink"><a href="https://www.mariabonita.de/" target="_blank">Website</a>
                 </button>
