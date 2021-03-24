@@ -1,4 +1,4 @@
-const mexicanRestaurants = [{
+const mexico = [{
 
   country: "Mexico",
   name: "Maria Bonita",
@@ -27,7 +27,7 @@ const mexicanRestaurants = [{
 }
 ]
 
-// recipe logic
+// restaurant logic
 let cuisineSelection = mexicanRestaurants;
 // setting the main recipe randomly on pageload
 let restaurantsIndex = parseInt(Math.random() * (cuisineSelection.length - 0) + 0);
