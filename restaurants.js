@@ -1,6 +1,6 @@
-const mexico = [ {
+const mexicanRestaurants = [{
 
-  country: "Mexico",  
+  country: "Mexico",
   name: "Maria Bonita",
   about: "Berlin‘s first authentic Mexican Bistro opened in 2009 and set the start of the Mexican Food–Revolution in Berlin. Ever since people enjoy traditionally prepared dishes, hand-made salsas and Margaritas just like in Mexico. So have a bite, close your eyes and take a little trip “south of the border.",
   imageUrl: "./src.images/Maria Bonita.jpg",
@@ -9,7 +9,7 @@ const mexico = [ {
 },
 
 {
-  country: "Mexico",  
+  country: "Mexico",
   name: "Zapata",
   about: "Lorem50",
   imageUrl: "./src.images/Zapata.jpg",
@@ -18,107 +18,69 @@ const mexico = [ {
 },
 
 {
-  country: "Mexico",  
+  country: "Mexico",
   name: "Tacoriño",
   about: "Lorem50",
   imageUrl: "./src.images/Tacoriño .jpg",
   mapUrl: "https://maps.google.com/maps?q=tacori%C3%B1o%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
-  buttonUrl: "https://www.tacorino.de/" 
+  buttonUrl: "https://www.tacorino.de/"
 }
 ]
 
+// recipe logic
+let cuisineSelection = mexicanRestaurants;
+// setting the main recipe randomly on pageload
+let restaurantsIndex = parseInt(Math.random() * (cuisineSelection.length - 0) + 0);
+let restaurantsName = cuisineSelection[restaurantsIndex].name;
+
+function UpdaterestaurantsIndex(restaurantsName) {
+  return cuisineSelection.findIndex(x => x.name === restaurantsName);
+};
+
+function updateRestaurants(cuisineSelection, restaurantsIndex) {
+  // Update Main
+  document.querySelector('.restaurant-title').innerHTML = cuisineSelection[restaurantsIndex].name;
+  document.querySelector('#img-restaurant').src = cuisineSelection[restaurantsIndex].imageUrl;
+  document.querySelector('#img-restaurant').alt = cuisineSelection[restaurantsIndex].name;
+  document.querySelector('.restaurant-description').innerHTML = cuisineSelection[restaurantsIndex].about;
+  document.querySelector('#gmap_canvas1').src = cuisineSelection[restaurantsIndex].mapUrl;
+  document.querySelector('#button-link').href = cuisineSelection[restaurantsIndex].buttonUrl;
+
+  // Update Secondary
+  const secondaryImages = document.querySelectorAll('.small-photo');
+  let i = 1;
+  secondaryImages.forEach(image => {
+    image.src = cuisineSelection[(restaurantsIndex + i) % cuisineSelection.length].imageUrl;
+    image.alt = cuisineSelection[(restaurantsIndex + i) % cuisineSelection.length].name;
+    i++;
+  })
+  const secondaryTitle = document.querySelectorAll('.small-title');
+  let g = 1;
+  secondaryTitle.forEach(title => {
+    title.innerHTML = cuisineSelection[(restaurantsIndex + g) % cuisineSelection.length].name;
+    g++;
+  })
+};
 
 
+const moreRestaurants = document.body.querySelector('#restaurant-secondary');
+const alternativeRestaurants = moreRestaurants.querySelectorAll('.alternative-restaurants');
 
+alternativeRestaurants.forEach(item => {
+  item.addEventListener('click', () => {
+    // retriving user selection for the recipe name after click
+    restaurantsName = item.querySelector('h3').innerHTML;
+    // running function to update the index of the recipe in recipes array
+    restaurantsIndex = UpdaterestaurantsIndex(restaurantsName);
+    updateRestaurants(cuisineSelection, restaurantsIndex);
+    // scroll the window to the beginning of recipe-main div
+    const restaurantDiv = document.body.querySelector('#restaurant-main');
+    window.scrollTo({
+      top: restaurantDiv.offsetTop,
+      left: 0,
+      behavior: 'smooth'
+    });
+  })
+})
 
-
-
-
-
-// function createCard (name, description, restName, restImg, restDesc, restMap, restLink){
-
-// //const card = document.querySelector("#main-restaurant");
-// //card.classList.add("card"); 
-
-
-
-// const countryName = document.querySelector(".country-title");
-// //document.createElement("div"); 
-// //card.classList.add("country-name");
-// countryName.innerText = name;
-// card.appendChild(countryName); 
-
-// const countryDescription = document.querySelector(".country-description");
-// //document.createElement("div"); 
-// //card.classList.add("country-description"); 
-// countryDescription.innerText = description; 
-// //card.appendChild(countryDescription); 
-
-// const restaurantName = document.querySelector(".restaurant-title"); 
-// //card.classList.add("restaurant-name");
-// restaurantName.innerText = restName;  
-// //card.appendChild(restaurantName); 
-
-// const restaurantImage = document.querySelector("#imgRestaurant"); 
-// restaurantImage.style.backgroundImage = `url(${restImg})`;
-// //restaurantImage.classList.add("restaurant-image"); 
-// restaurantImage.src = restImg; 
-// //card.appendChild(restaurantImage); 
-
-// const restaurantDescription = document.querySelector(".restaurant-description"); 
-// //card.classList.add("restaurant-description"); 
-// restaurantDescription.innerText = restDesc; 
-// //card.appendChild(restaurantDescription); 
-
-// const map = document.querySelector("#gmap_canvas1"); 
-// //card.classList.add("map"); 
-// map.src = restMap;
-// //card.appendChild(map); 
-
-// const cardbutton = document.querySelector("#buttonLink");
-// //card.classList.add("button-website"); 
-// cardbutton.href = restLink; 
-// cardbutton.innerText = "Go to Website";    
-// //const container = document.querySelector("#main-restaurant"); 
-// //container.appendChild(card); 
-// }
-
-// for (let i = 0; i < mexico.length; i++) { 
-// createCard(mexico[i].name, mexico[i].description, mexico[i].restName, mexico[i].restImg, mexico[i].restDesc, mexico[i].restMap, mexico[i].restLink);
-// }
-
-// for (let j = 0; j < italy.length; i++){
-//   createCard(italy[j].name, italy[j].description, italy[j].restName, italy[j].restImg, italy[j].restDesc, italy[j].restMap, italy[j].restLink);}
-
-
-
- 
-
-
-
-
-
-// function updateSecondaryImageAndTitle(recipeIndex) {
-//     const moreRecipes = document.body.querySelector('#more-recipes');
-//     const alternativeRecipes = moreRecipes.querySelectorAll('.alternative-recipes');
-//     let i = 1;
-//     alternativeRecipes.forEach(item => {
-//         item.querySelector('img').src = recipes[(recipeIndex + i) % recipes.length].picture;
-//         item.querySelector('h3').innerHTML = recipes[(recipeIndex + i) % recipes.length].name;
-//         i++;
-//     })
-// }
-// function updateMainImageAndTitle(recipeIndex) {
-//     const ingredientListDiv = document.body.querySelector('#recipe-main');
-//     const mainImage = ingredientListDiv.querySelector('img');
-//     mainImage.src = recipes[recipeIndex].picture;
-//     mainImage.alt = recipes[recipeIndex].name;
-//     const mainTitle = ingredientListDiv.querySelector('#recipe-main-title');
-//     mainTitle.innerHTML = recipes[recipeIndex].name;
-// }
-// function UpdateRecipeIndex() {
-//     recipes.findIndex(x => x.name === recipeName);
-// };
-
-
-
+updateRestaurants(cuisineSelection, restaurantsIndex);

@@ -13,28 +13,34 @@
         <nav></nav>
     </header>
     <section id="main-restaurant">
-    <h1 class="country-title"></h1>
-    <p class="country-description"></p>
-    <h2 class="restaurant-title"></h2>
-    <img src="./src.images/Maria Bonita.jpg" alt="Maria Bonita" id="imgRestaurant">
-    <p class="restaurant-description"></p>
+        <div class="country-intro">
+            <h1 class="country-title">Greece</h1>
+            <p class="country-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div id='restaurant-main'>
+            <h2 class="restaurant-title"></h2>
+            <img src="./src.images/Maria Bonita.jpg" alt="Maria Bonita" id="img-restaurant">
+            <p class="restaurant-description"></p>
             <div id="map">
-                <iframe width="591" height="265" id="gmap_canvas1" src= "https://maps.google.com/maps?q=maria%20bonita%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no"
-                    marginheight="0" marginwidth="0"></iframe>
+                <iframe width="591" height="265" id="gmap_canvas1"
+                    src="https://maps.google.com/maps?q=maria%20bonita%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
             </div>
-
-            <button id="buttonLink"><a href="https://www.mariabonita.de/" target="_blank">Website</a>
+            <button id="button-link"><a href="https://www.mariabonita.de/" target="_blank">Website</a>
             </button>
+        </div>
 
-            <div id="boxcontainer">
-                <div>
-                    <img class="smallphoto" src="./src.images/Zapata.jpg" alt="Zapata">
-                </div>
-                <div>
-            <img class="smallphoto" src="./src.images/Tacoriño .jpg" alt="Tacoriño">
+        <div id="restaurant-secondary">
+            <h2>Other awesome restaurants</h2>
+            <div class="alternative-restaurants">
+                <img class="small-photo" src="" alt="">
+                <h3 class='small-title'>Something</h3>
             </div>
+            <div class="alternative-restaurants">
+                <img class="small-photo" src="" alt="">
+                <h3 class='small-title'>Something</h3>
             </div>
-            <script src="restaurants.js"></script>
+        </div>
     </section>
 
     <footer id="footer-selection">
@@ -42,9 +48,10 @@
         <button>country selection</button>
     </footer>
 
-    </body>
-    
-    </html>
+    <script src="./restaurants.js"></script>
+</body>
+
+</html>
 
 
 
@@ -55,7 +62,7 @@
 
 
 
-        <!--<div class="country-intro">
+<!--<div class="country-intro">
             <h1 class="country-title"></h1>
             <p class="country-description"></p>
             <h2 class="restaurant-title"></h2>
