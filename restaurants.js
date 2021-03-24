@@ -1,6 +1,6 @@
-const restaurantCountry = ["italy","greece", "mexico", "germany","syrian"]
+const restaurantsCountry = ["italy","greece", "mexico", "germany","syrian"]
 
-const mex1 = [ {
+const countries = [ {
   country: "Mexico",  
   name: "Maria Bonita",
   about: "Berlin‘s first authentic Mexican Bistro opened in 2009 and set the start of the Mexican Food–Revolution in Berlin. Ever since people enjoy traditionally prepared dishes, hand-made salsas and Margaritas just like in Mexico. So have a bite, close your eyes and take a little trip “south of the border”.",
@@ -22,9 +22,24 @@ country: "Mexico",
   mapUrl: "https://maps.google.com/maps?q=TACORI%C3%91O,%20Knesebeckstra%C3%9Fe,%20Berl%C3%ADn&t=&z=13&ie=UTF8&iwloc=&output=embed"
 }
 ]
+ 
+ const mainMap = document.body.querySelector("#gmap_canvas1");
+mainMap.src = countries[0].mapUrl; 
 
-const mainMap = document.body.querySelector("#gmap_canvas1");
-mainMap.src = mex1[2].mapUrl; 
+const imageR = document.body.querySelector("#maria");
+imageR.src = countries[0].image;
+
+function arrayRestaurants(array){
+  for (let i = 0; i < countries.length; i ++){
+    console.log(array[i]); 
+  }
+}
+
+
+
+
+
+
 
 
 
