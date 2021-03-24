@@ -2,35 +2,91 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-size: 30px;
+    font-size: 16px;
     text-align: center;
 }
 
-/* HEADER */
+/* general elements */
+body { 
+    font-family:'Roboto',sans-serif;
+    font-weight:300 
+}
+
+h1, h2, h3 {
+    color: #E0705F;
+}
+
+h2 {
+    padding: 15px;
+}
+
+h3 {
+    width: 100%;
+    padding: 5px;
+    font-size: 20px;
+}
+
+p {
+    font-size: 16px;
+}
+
+
+/* HEADER and entryquestion*/
 
 
 #main {
-    padding-top: 60px;
     display: flex;
     flex-direction: column;
 }
 
 #in-out-selection {
-    background-color: blue;
-    height: calc(100vh - 60px);
+    background-color: white;
+    padding-top: 60px;
+    height: 100vh;
 }
 
 #in, #out {
     height: 50%;
+    padding-top: 50px;
+    color: #E0705F;
+    font-size: 2em;
+    cursor: pointer;
+    background-size: cover;
+    /* filter: grayscale(0.8); */
+    text-shadow: 0px 0px 14px #000000;
+}
+
+#in:hover, #out:hover {
+    /* filter: none; */
+    /* transition: filter 0.5s ease-in-out; */
+}
+
+#in {
+    background-image: url(./img/cooking.jpg);
+}
+
+#out{
+    background-image: url(./img/dine-out.jpg);
 }
 
 #country-selection {
-    background-color: red;
-    height: calc(100vh - 60px);
+    padding-top: 60px;
+    height: 100vh;
+    background: #E0705F;
+    background: -moz-linear-gradient(top, #E0705F 0%, #FFD078 75%, #E0705F 100%);
+    background: -webkit-linear-gradient(top, #E0705F 0%, #FFD078 75%, #E0705F 100%);
+    background: linear-gradient(to bottom, #E0705F 0%, #FFD078 75%, #E0705F 100%);
 }
 
 .country-card {
     height: 20%;
+    padding-top: 20px;
+    
+}
+.country-card a {
+    text-decoration: none;
+    color: #121821;
+    font-size: 30px;
 }
 
 
@@ -39,8 +95,8 @@
 header {
     position: fixed;
     width: 100%;
-    border-bottom: 2px solid green;
-    background-color: blueviolet;
+    background-color: #FFD078;
+    opacity: 80%;
 }
 
 nav {
@@ -53,7 +109,8 @@ nav {
     height: 40px;
     width: 40px;
     margin: 10px;
-    background-color: blue;
+    background-image: url(./img/logo.svg);
+    background-size: contain;
 }
 
 .hamburger.nav-closed {
@@ -71,7 +128,6 @@ nav {
 
 .nav-links {
     display: flex;
-    background-color: blueviolet;
     list-style: none;
     align-items: center;
     justify-content: space-around;
@@ -82,6 +138,10 @@ nav {
 
 .nav-links li {
     padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 30px;
 }
 
 .nav-links li a{
@@ -90,12 +150,16 @@ nav {
 }
 
 /*recipes*/
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-size: 30px;
-    text-align: center;
+
+
+#main-recipes {
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+#recipe-main {
+    padding-top: 60px;
 }
 
 #recipe-main img {
@@ -114,9 +178,7 @@ nav {
     justify-content: center;
 }
 
-h3 {
-    width: 100%;
-}
+
 
 #ingredients-container {
     display: flex;
