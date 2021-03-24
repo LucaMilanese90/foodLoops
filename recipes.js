@@ -99,13 +99,12 @@ const greek = [
 
 let cuisineSelection = italian;
 // setting the main recipe randomly on pageload
-let recipeIndex = parseInt(Math.random() * (3 - 0) + 0);
+let recipeIndex = parseInt(Math.random() * (cuisineSelection.length - 0) + 0);
 let recipeName = cuisineSelection[recipeIndex].name;
 let portionSelection = cuisineSelection[recipeIndex].portions;
 
 const portionDiv = document.body.querySelector('#portions');
 const portionsButtons = portionDiv.querySelectorAll('.portions-button');
-
 
 function updateDefaultButtonQuantity() {
     const portionDiv = document.body.querySelector('#portions');
@@ -220,13 +219,14 @@ function updateIngredientListEditable(cuisineSelection, recipeIndex, portionSele
         // add input.type number and placeholder value to all ingredients quantityDiv
         const quantityInput = document.createElement('input');
         quantityInput.type = 'number';
+        // if the quantity value is not a number set the placeholder value to '' and disable the input
         if (typeof updatedQuantity != 'number') {
             quantityInput.placeholder = '';
+            quantityInput.disabled = true;
         } else {
             quantityInput.placeholder = parseInt(updatedQuantity);
         };
         quantityInput.classList.add('quantity');
-        //quantityInput.innerHTML = parseInt(updatedQuantity);
         quantityDiv.appendChild(quantityInput);
         // END OF DIFFERENCE FROM updateIngredientList()
 
@@ -317,6 +317,7 @@ alternativeRecipes.forEach(item => {
 })
 
 
+
 document.body.querySelector('.edit').addEventListener('click', () => {
     document.body.querySelector('.edit').classList.add('not-visible');
     document.body.querySelector('.personalized-portions').classList.add('not-visible');
@@ -336,7 +337,8 @@ document.body.querySelector('.done').addEventListener('click', () => {
             personalizedPortion = (parseInt(item.value) * portionSelection / parseInt(item.placeholder)).toFixed(1);
         }
     });
-    console.log(personalizedPortion);
+
+
     if (personalizedPortion == portionSelection) {
         updateIngredientList(cuisineSelection, recipeIndex, portionSelection);
     } else {
@@ -349,10 +351,11 @@ document.body.querySelector('.done').addEventListener('click', () => {
         const allPortionsButtons = document.body.querySelectorAll('.portions-button');
         allPortionsButtons.forEach(item => {
             item.classList.remove('selected-button');
-            // adding the class '.selected-button' on page load to the default portion size
         });
     }
 });
+
+
 
 
 updatePageTitleAndIntro(cuisineSelection)
@@ -366,4 +369,29 @@ updateSecondaryImageAndTitle(recipeIndex);
 // TODO LIST:
 
 // Modify function to account for single and plural i.e egg - eggs
+
 // Delete value of input when selecting another input
+/* const quantityInputAll = document.querySelectorAll('.quantity');
+    quantityInputAll.forEach(item => {
+        item.addEventListener('selectionchange', () => {
+            for (let i = 0; i < quantityInputAll.length; i++) {
+                console.log(quantityInputAll[i].value);
+            };
+        });
+    });
+    console.log(quantityInputAll); */
+
+
+
+
+/*function addGlobalEventListener(type, selector, callback) {
+    document.addEventListener(type, e => {
+        if (e.target.matches(selector)) callback(e)
+    });
+};
+
+document.addEventListener('click', e => {
+    if (e.target.matches('.quantity')) {
+        console.log(e);
+    }
+}) */
