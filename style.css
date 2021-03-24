@@ -8,9 +8,6 @@
 
 /* HEADER */
 
-header {
-    height: 60px;
-}
 
 #main {
     display: flex;
