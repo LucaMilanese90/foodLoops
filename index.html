@@ -56,20 +56,48 @@
                 <h3>Cooking directions</h3>
                 <div id="directions">
                 </div>
-                <button id="send-button">
-                    E-mail this recipe to you
-                </button>
+                <input class='email-address' type="text" placeholder="Type your email"></input>
+                <button id='email'>Email this recipe</button>
             </div>
+            <div id="more-recipes">
+                <h2>Other awesome recipes</h2>
+                <div class="alternative-recipes">
+                    <img src="" alt="">
+                    <h3>Carbonara</h3>
+                </div>
+                <div class="alternative-recipes">
+                    <img src="" alt="">
+                    <h3>other carbonara</h3>
+                </div>
+            </div>
+    </section>
+    <section id="main-restaurant">
+        <div class="country-intro">
+            <h1 class="country-title">Greece</h1>
+            <p class="country-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
-        <div id="more-recipes">
-            <h2>Other awesome recipes</h2>
-            <div class="alternative-recipes">
-                <img src="" alt="">
-                <h3>Carbonara</h3>
+        <div id='restaurant-main'>
+            <h2 class="restaurant-title"></h2>
+            <img src="./src.images/Maria Bonita.jpg" alt="Maria Bonita" id="img-restaurant">
+            <p class="restaurant-description"></p>
+            <div id="map">
+                <iframe width="591" height="265" id="gmap_canvas1"
+                    src="https://maps.google.com/maps?q=maria%20bonita%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
             </div>
-            <div class="alternative-recipes">
-                <img src="" alt="">
-                <h3>other carbonara</h3>
+            <button id="button-link"><a href="https://www.mariabonita.de/" target="_blank">Website</a>
+            </button>
+        </div>
+
+        <div id="restaurant-secondary">
+            <h2>Other awesome restaurants</h2>
+            <div class="alternative-restaurants">
+                <img class="small-photo" src="" alt="">
+                <h3 class='small-title'>Something</h3>
+            </div>
+            <div class="alternative-restaurants">
+                <img class="small-photo" src="" alt="">
+                <h3 class='small-title'>Something</h3>
             </div>
         </div>
     </section>
