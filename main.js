@@ -14,8 +14,8 @@ const italian = [
     intro: "Italian cuisine is bla bla bla...",
     name: "risotto",
     ingredients: ["eggs", "pecorino cheese", "pasta", "pepper", "guanciale"],
-    quantity: [2, 35, 200, "", 80],
-    unitMeasure: ["", "g", "g", "", "g"],
+    quantity: [2, 35, 200, "", 80, ""],
+    unitMeasure: ["", "g", "g", "", "g", ""],
     portions: 4,
     directions: [
       "Do something",
@@ -25,7 +25,7 @@ const italian = [
       "Ready to go!",
     ],
     picture:
-      "https://images.unsplash.com/photo-1595908129746-57ca1a63dd4d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+      "",
   },
   {
     name: "Carbonara",
@@ -94,7 +94,7 @@ const greek = [
       "Can be served with chrithmum (an edible wild plant) or capers, olives, olive oil and some freshly ground pepper. ",
     ],
     picture:
-      "https://cdn.pixabay.com/photo/2017/11/14/14/59/dakos-2948661_1280.jpg",
+      "img/dakos-2948661_1920.jpg",
   },
   {
     name: "Souvlaki",
@@ -119,7 +119,7 @@ const greek = [
       "Put a dollop of tzatziki and the meat from one skewer on each warmed flatbread. Top with some of your pepper mixture, a drizzle of extra virgin olive oil and a good squeeze of lemon juice. Life doesn’t get much better.",
     ],
     picture:
-      "https://cdn.pixabay.com/photo/2020/10/22/10/07/meal-5675611_1280.jpg",
+      "img/greek3.jpg",
   },
   {
     name: "Garides saganaki",
@@ -146,7 +146,7 @@ const greek = [
       "Garnish the shrimp saganaki with chopped parsley or dill and serve while still hot. Enjoy this traditional Greek shrimp saganaki recipe with a cold glass of ouzo!",
     ],
     picture:
-      "https://cdn.pixabay.com/photo/2016/08/06/13/14/shrimps-1574353_1280.jpg",
+      "img/greek-aliki1.jpg",
   },
 ];
 const syrian = [
@@ -187,7 +187,7 @@ const syrian = [
       'Serve the beef mince on top of the grilled aubergine, then top with some yoghurt and a mix of all the chopped ingredients in the pine nut kachumber salad.'
     ],
     picture:
-      "https://images.unsplash.com/photo-1595908129746-57ca1a63dd4d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+      "img/Syrian Food 1- Beef Mince .jpg",
   },
   {
     name: "Harak osbao – lentils and pasta with tamarind, sumac and pomegranate",
@@ -222,7 +222,7 @@ const syrian = [
       'Spoon the lentils and pasta into a large, shallow serving bowl. Top with the garlic and coriander, parsley, pomegranate seeds and sumac, and serve with the lemon wedges.'
     ],
     picture:
-      "https://images.unsplash.com/photo-1579631542720-3a87824fff86?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      "img/Syrian Food 3 - Sarak Osbao .jpg",
   },
   {
     name: "Safiha (Mini Meat Pies)",
@@ -243,7 +243,7 @@ const syrian = [
       "Bake and serve. Safiha is best when served immediately."
     ],
     picture:
-      "https://images.unsplash.com/photo-1614961909013-1e2212a2ca87?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+      "img/Syrian Food 2- Mini Meat .jpg",
   },
 ];
 const german = [
@@ -275,7 +275,7 @@ const german = [
       "Remove skewers, picks, or thread to serve rouladen with their gravy.",
     ],
     picture:
-      "https://cdn.pixabay.com/photo/2010/12/10/08/cabbage-rolls-1124_1280.jpg",
+      "img/german12.jpg",
   },
   {
     name: "Herring with Yogurt Sauce and Potatoes",
@@ -301,7 +301,7 @@ const german = [
       "Rinse and finely slice radishes. Whisk cream with yogurt, herbs, onions, radishes and cucumber and season with salt and pepper. Heat butter in a pan and heat potatoes for a few minutes. Arrange potatoes and herring on plates and drizzle wtih yogurt sauce. Serve immediately.",
     ],
     picture:
-      "https://cdn.pixabay.com/photo/2019/03/01/15/14/roll-mops-4028046_1280.jpg",
+      "img/german4.jpg",
   },
   {
     name: "Hoppel Poppel (Farmers Breakfast)",
@@ -357,7 +357,7 @@ const mexican = [
       "Divide the fish among plates and serve with the avocado salad and freshly squeezed lime wedges.",
     ],
     picture:
-      "https://img.jamieoliver.com/jamieoliver/recipe-database/4clzeE-taZdBLJJ9sO5b3_.jpg?tr=w-800,h-1066",
+      "img/mexican-alliki-2.jpg",
   },
   {
     name: "Mega veggie nachos",
@@ -388,7 +388,7 @@ const mexican = [
       "Peel, destone and slice the avocado into wedges, then drizzle with the remaining lime juice.",
     ],
     picture:
-      "https://img.jamieoliver.com/jamieoliver/recipe-database/46426621.jpg?tr=w-800,h-1066",
+      "img/mexican-1-aliki.jpg",
   },
   {
     name: "Shrimp & black bean quesadillas",
@@ -411,7 +411,7 @@ const mexican = [
       "Once the cheese has melted, remove the quesadillas from the pan and cut each one into six triangles. Serve straight away, topped with a dollop of soured cream and salsa, the pickled jalapeños and the remaining coriander leaves.",
     ],
     picture:
-      "https://img.jamieoliver.com/jamieoliver/recipe-database/5NNweMcpK-099-lYx3P2t_.jpg?tr=w-800,h-1066",
+      "img/Mexican food 3 .jpg",
   },
 ];
 
@@ -456,7 +456,7 @@ const greece = [
     name: "Rises Delicacies",
     about:
       "Nice small greek bistro with homemade food, and a little shop with high quality products to buy and cook at home",
-    imageUrl: "./src.images/Maria Bonita.jpg",
+    imageUrl: "img/rises-greek.jpeg",
     mapUrl:
       "https://maps.google.com/maps?q=Rises%20Delicacies%20berlin%20restaurant&t=&z=13&ie=UTF8&iwloc=&output=embed",
     buttonUrl: "https://www.facebook.com/RisesDelicacies/",
@@ -466,7 +466,7 @@ const greece = [
     country: "Greece",
     name: "Berkis",
     about: "One of the few places where you can get traditional souvlaki. TIP: try adding sauerkraut instead of Pommes",
-    imageUrl: "./src.images/Zapata.jpg",
+    imageUrl: "img/souvlaki-greece.jpeg",
     mapUrl:
       "https://maps.google.com/maps?q=Berkis%20berlin%20restaurant&t=&z=13&ie=UTF8&iwloc=&output=embed",
     buttonUrl: "https://www.berkis.de/",
@@ -476,7 +476,7 @@ const greece = [
     country: "Greece",
     name: "Aplo",
     about: " A bit pricey but also a nice place to get traditional souvlaki.",
-    imageUrl: "./src.images/Tacoriño .jpg",
+    imageUrl: "img/aplo-greece.png",
     mapUrl:
       "https://maps.google.com/maps?q=Aplo%20berlin%20restaurant&t=&z=13&ie=UTF8&iwloc=&output=embed",
     buttonUrl: "https://aplofoods.com/",
@@ -489,7 +489,7 @@ const germany = [
     name: "Zur letzten Instanz",
     about:
       "The restaurant „Zur letzten Instanz” is the eldest restaurant in Berlin and ranks among the sights of the capital. Its origin is in 1621, when a former equestrian servant of the elector opened a gin mill at this place. The restaurant got its present name when mainly guests from the nearby court came to drink their experiences ”in the last instance”. Historic additions survived despite the reconstruction after the war, even Napoleon himself was served in the restaurant at the tiled stove. Our history, the two restaurants, private room and beer garden invite our guests to stay. Berlin cuisine a la carte with exclusive regional products and fresh beer on tap ensure culinary moments in original ambiance.",
-    imageUrl: "",
+    imageUrl: "img/Zur-letzten-Instanz-um-german.jpeg",
     mapUrl:
       "https://maps.google.com/maps?q=Zur%20letzten%20Instanz%20restaurant%20%20Berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
     buttonUrl: "https://zurletzteninstanz.com/",
@@ -499,7 +499,7 @@ const germany = [
     country: "Germany",
     name: "Katerschmaus",
     about: "Ahoy, you hungry cats and Katers.We have successfully undocked, now the Katerschmaus is finally setting sail again. Now we are there for you from Tuesday to Friday from 1 p.m. to 11 p.m and Saturday 5pm-11pm. Look forward to a menu that makes you happy from lunch to dinner – full of trans-European dishes, mostly with regional goods. The new chef Robin Marondel and restaurant manager Patricia Allegretta, together with Matze and many familiar faces, will warmly welcome you.",
-    imageUrl: "",
+    imageUrl: "img/katerschmaus-german.jpeg",
     mapUrl:
       "https://maps.google.com/maps?q=Katerschmaus%20restaurant%20%20Berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
     buttonUrl: "https://www.katerschmaus.de/en",
@@ -509,7 +509,7 @@ const germany = [
     country: "Germany",
     name: "Hoppegarten",
     about: "Hinter dem Schlosspark-Theater und Adria-Kino gelegen, hat sich der Hoppegarten zu einer beliebten Steglitzer Gastro-Institution entwickelt. Es ist ein gemütliches, familienfreundliches Lokal — ein Kommunikationszentrum für jüngere und jung gebliebene Leute. Dem publikumsstarken Tresen und dem Restaurant ist ein Cafébereich und ein beheizter Wintergarten angeschlossen — Freunde von Pool Billard und Kicker kommen auch auf ihre Kosten. Unser junges, eingespieltes Team freut sich, Sie im Hoppegarten begrüßen zu dürfen. Egal ob Stammgast oder auf kulinarischer Erkundungsreise — lassen Sie sich von unserem Service überzeugen und freuen Sie sich auf eine angenehme Zeit in behaglicher Atmosphäre.",
-    imageUrl: "",
+    imageUrl: "img/hoppegarten-german.jpeg",
     mapUrl:
       "https://maps.google.com/maps?q=Hoppegarten%20restaurant%20%20Berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
     buttonUrl: "http://www.hoppegarten-berlin.de/",
@@ -522,7 +522,7 @@ const italy = [
     name: "Focacceria",
     about:
       "Best Focaccia in Berlin, next to Weinmeister park",
-    imageUrl: "",
+    imageUrl: "img/focaccia-berlin.jpeg",
     mapUrl:
       "https://maps.google.com/maps?q=La%20focacceria%20Fehrbelliner%20Str.%2024,%2010119%20Berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
     buttonUrl: "https://www.tripadvisor.com/Restaurant_Review-g187323-d1028366-Reviews-Focacceria-Berlin.html",
@@ -532,7 +532,7 @@ const italy = [
     country: "Italy",
     name: "Gazzo",
     about: "Original pizza Napolitana in Neukölln.",
-    imageUrl: "",
+    imageUrl: "img/gazzo-italy.jpg",
     mapUrl:
       "https://maps.google.com/maps?q=Gazzo%20Berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
     buttonUrl: "https://www.gazzopizza.com/",
@@ -542,7 +542,7 @@ const italy = [
     country: "Italy",
     name: "Centro Italia",
     about: "This one is not a restaurant, best best supermarket in Berlin to get good quality italian products.",
-    imageUrl: "",
+    imageUrl: "img/centro-italia-italy.jpeg",
     mapUrl:
       "https://maps.google.com/maps?q=Gro%C3%9Fbeerenstr.%20169-171,%2012277%20Berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
     buttonUrl: "https://centro-italia.de/",
@@ -555,7 +555,7 @@ const syria = [
     name: "Yarok",
     about:
       "Yarok offers fine Syrian food from Damascus. The food is always prepared personally and lovingly with fresh ingredients and served quickly. The special Syrian cuisine has been adapted to European tastes without losing its authenticity.",
-    imageUrl: "",
+    imageUrl: "img/yarok-berlin.jpeg",
     mapUrl:
       "https://maps.google.com/maps?q=Yarok%20restaurant%20berlin%20&t=&z=13&ie=UTF8&iwloc=&output=embed",
     buttonUrl: "https://www.yarok-restaurant.de/",
@@ -565,7 +565,7 @@ const syria = [
     country: "Syria",
     name: "Malakeh",
     about: "The chef Malakeh Jazmati, was born in Damascus, Syria. She moved from politics to the kitchen , which brings together the Arab and foreign friends with their children on one table to see the warmth of heart and love with a plate and fork.",
-    imageUrl: "",
+    imageUrl: "img/malakeh-berlin.jpeg",
     mapUrl:
       "https://maps.google.com/maps?q=malakeh%20restaurant%20berlin%20&t=&z=13&ie=UTF8&iwloc=&output=embed",
     buttonUrl: "https://www.malakeh-restaurant.de/",
@@ -575,7 +575,7 @@ const syria = [
     country: "syria",
     name: "Aldimashqi",
     about: "We offer the most delicious specialties of Syrian cuisine! Enjoy with us a new taste of fine, exquisite dishes of Syrian cuisine. We welcome you and your family!",
-    imageUrl: "",
+    imageUrl: "img/aldimashqi-syrian.jpeg",
     mapUrl:
       "https://maps.google.com/maps?q=Reuterstra%C3%9Fe%2028,%2012047%20Berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
     buttonUrl: "https://aldimashqi-rayan.business.site/?utm_source=gmb&utm_medium=referral",
