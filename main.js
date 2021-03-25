@@ -216,7 +216,7 @@ const syrian = [
       'flaky sea salt',
       'black pepper'
     ],
-    quantity: [20, 125, 30, 175, 175, 0.75, 1000, 3, 15, 10, 45, 1, 1, '', ''],
+    quantity: [20, 125, 30, 175, 175, 1000, 0.75, 3, 15, 10, 45, 1, 1, '', ''],
     unitMeasure: ['g', 'g', 'ml', 'g', 'g', 'ml', 'tbsp', '', 'g', 'g', 'g', 'tsp', '', '', ''],
     portions: 4,
     directions: [
@@ -750,11 +750,7 @@ function updateDefaultButtonQuantity() {
   document.body.querySelector(".edit").classList.remove("not-visible");
   portionsButtons.forEach((item) => {
     // adding the class '.selected-button' on page load to the default portion size
-    if (item.innerHTML == portionSelection) {
-      item.classList.add("selected-button");
-    } else {
-      item.classList.remove("selected-button");
-    }
+    item.innerHTML == portionSelection ? item.classList.add("selected-button") : item.classList.remove("selected-button");
   });
 }
 
