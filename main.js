@@ -25,7 +25,7 @@ const italian = [
       "Season to taste with salt and black pepper and serve garnished with more cheese.",
     ],
     picture:
-      "https://images.unsplash.com/photo-1595908129746-57ca1a63dd4d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+      "img/italian-aliki-1.jpg",
   },
   {
     name: "Lasagne Bolognese",
@@ -54,7 +54,7 @@ const italian = [
       "Preheat oven to 180 C / Gas 4.", "Pour a ladleful each of the white sauce and the Bolognese sauce over the bottom of a 20x30cm baking dish. Lay 3 to 4 lasagne sheets side by side and cover with 1/3 or 1/4 of remaining white sauce (depending on how many layers you want to do); then cover the sheets with the same amount of Bolognese sauce. Sprinkle with Parmesan cheese, then cover with lasagne sheets. Continue layers, finishing with white sauce and a good handful of grated Parmesan cheese.", "Bake for 30 to 40 minutes or until the pasta is fully cooked and the top is golden brown. Remove from oven, then let stand for a few minutes before slicing and serving.",
     ],
     picture:
-      "https://images.unsplash.com/photo-1579631542720-3a87824fff86?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      "img/italian3.jpg",
   },
   {
     name: "Classic Tiramisu",
@@ -70,7 +70,7 @@ const italian = [
       "Working one at a time, quickly dip each ladyfinger into the espresso mixture -- they are quite porous and will fall apart if left in the liquid too long -- and place them rounded side up at the bottom of the baking dish. Repeat, using half the ladyfingers, until you’ve got an even layer, breaking the ladyfingers in half as needed to fill in any obvious gaps (a little space in between is O.K.). Spread half the mascarpone mixture onto the ladyfingers in one even layer. Repeat with remaining espresso-dipped ladyfingers and mascarpone mixture", "Dust top layer with remaining tablespoon of cocoa powder. Top with shaved or finely grated chocolate, if desired.", "Cover with plastic wrap and let chill in the refrigerator for at least 4 hours (if you can wait 24 hours, all the better) before slicing or scooping to serve.",
     ],
     picture:
-      "https://images.unsplash.com/photo-1614961909013-1e2212a2ca87?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+      "img/tiramisu-italian.jpg",
   },
 ];
 
@@ -339,7 +339,7 @@ const german = [
 const mexican = [
   {
     cuisine: "Mexican",
-    intro: "Mexican cuisine is bla bla bla...",
+    intro: "Mexican cuisine is a complex and ancient cuisine, with techniques and skills developed over thousands of years of history. It is created mostly with ingredients native to Mexico, as well as those brought over by the Spanish conquistadors, with some new influences since then. In addition to staples, such as corn and chile peppers, native ingredients include tomatoes, squashes, avocados, cocoa and vanilla, as well as ingredients not generally used in other cuisines, such as edible flowers, vegetables like huauzontle and papaloquelite, or small criollo avocados, whose skin is edible. Chocolate originated in Mexico and was prized by the Aztecs. It remains an important ingredient in Mexican cookery.",
     name: "Lemon sole with chipotle & chilli recado",
     ingredients: [
       "lemon sole",
