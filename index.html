@@ -1,33 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
     <header id="header">
-     <nav>
-     </nav>
+        <nav>
+        </nav>
     </header>
     <section id="main">
-     <section id="in-out-selection">
-      <div id="in">
-       In 
-      </div>
-      <div id="out">
-      Out
-      </div>
-     </section>
-     <section id="country-selection">
-         <div class="country-card italy">Italian</div>
-         <div class="country-card germany">German</div>
-         <div class="country-card mexico">Mexican</div>
-         <div class="country-card syria">Syrian</div>
-         <div class="country-card greece">Greek</div>
-     </section>
+        <section id="in-out-selection">
+            <div id="in" class="in">
+                <div class="in-out-text">Cook at home</div>
+
+            </div>
+            <div id="out" class="out">
+                <div class="in-out-text">Dine out</div>
+            </div>
+        </section>
+        <section id="country-selection">
+            <div class="country-card italian">Italian</div>
+            <div class="country-card german">German</div>
+            <div class="country-card mexican">Mexican</div>
+            <div class="country-card syrian">Syrian</div>
+            <div class="country-card greek">Greek</div>
+        </section>
     </section>
+    <section id="main-recipes">
+        <div class="country-intro">
+            <h1 class="country-title"></h1>
+            <p class="country-description"></p>
+        </div>
+        <div class="white-space-recipe"></div>
+        <div id="recipe-main" class="recipe-main">
+            <h2 id="recipe-main-title"></h2>
+            <img class="main-image" src="" alt="">
+            <div id="portions">
+                <label>Portionsize: </label>
+                <button class='portions-button'>1</button>
+                <button class='portions-button'>2</button>
+                <button class='portions-button'>3</button>
+                <button class='portions-button'>4</button>
+                <button class='edit'>Edit</button>
+                <button class='done not-visible'>Done</button>
+                <button class='personalized-portions not-visible'></button>
+            </div>
+            <div class='ingredient-list'>
+                <h3>Ingredient list</h3>
+                <div id="ingredients-container">
+                </div>
+            </div>
+
+            <div class='directions'>
+                <h3>Cooking directions</h3>
+                <div id="directions">
+                </div>
+                <div class=send-email><input class='email-address' type="text" placeholder="Type your email"></input>
+                    <button id='email'>Email this recipe</button>
+                </div>
+            </div>
+
+        </div>
+        <div id="more-recipes">
+            <h2>Other awesome recipes</h2>
+            <div class="alternatives">
+                <div class="alternative-recipes">
+                    <img src="" alt="">
+                    <h3></h3>
+                </div>
+                <div class="alternative-recipes">
+                    <img src="" alt="">
+                    <h3></h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="main-restaurant">
+        <div class="country-intro">
+            <h1 class="country-title"></h1>
+            <p class="country-description"></p>
+        </div>
+        <div class="white-space-restaurant"></div>
+        <div id='restaurant-main'>
+            <h2 class="restaurant-title"></h2>
+            <img src="" alt="" id="img-restaurant">
+            <p class="restaurant-description"></p>
+            <div id="map">
+                <iframe width="591" height="265" id="gmap_canvas1" src="" frameborder="0" scrolling="no"
+                    marginheight="0" marginwidth="0"></iframe>
+            </div>
+            <button id="button-link"><a href="" target="_blank">Website</a>
+            </button>
+        </div>
+
+        <div id="restaurant-secondary">
+            <h2>Other awesome restaurants</h2>
+            <div class="alternatives">
+                <div class="alternative-restaurants">
+                    <img class="small-photo" src="" alt="">
+                    <h3 class='small-title'></h3>
+                </div>
+                <div class="alternative-restaurants">
+                    <img class="small-photo" src="" alt="">
+                    <h3 class='small-title'></h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- <footer id="footer-selection">
+        <button>eat out</button>
+        <button>country selection</button>
+      </footer> -->
     <script src="main.js"></script>
 </body>
+
 </html>

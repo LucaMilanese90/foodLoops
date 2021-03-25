@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="recipes.css" />
+  <link rel="stylesheet" href="navbar.css">
+
+</head>
+
+<body>
+  <header id="header">
+    <nav></nav>
+  </header>
+  <section id="main-recipes">
+    <div class="country-intro">
+      <h1 class="country-title">Greece</h1>
+      <p class="country-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div id="recipe-main" class="recipe-main">
+      <h2 id="recipe-main-title"></h2>
+      <img src="" alt="">
+      <div id="portions">
+        <button class='portions-button'>1</button>
+        <button class='portions-button'>2</button>
+        <button class='portions-button'>3</button>
+        <button class='portions-button'>4</button>
+        <button class='edit'>Edit</button>
+        <button class='done not-visible'>Done</button>
+        <button class='personalized-portions not-visible'></button>
+      </div>
+      <div class='ingredient-list'>
+        <h3>Ingredient list</h3>
+        <div id="ingredients-container">
+        </div>
+      </div>
+      <div class='directions'>
+        <h3>Cooking directions</h3>
+        <div id="directions">
+        </div>
+        <button id="send-button">
+          E-mail this recipe to you
+        </button>
+      </div>
+    </div>
+    <div id="more-recipes">
+      <h2>Other awesome recipes</h2>
+      <div class="alternative-recipes">
+        <img src="" alt="">
+        <h3>Carbonara</h3>
+      </div>
+      <div class="alternative-recipes">
+        <img src="" alt="">
+        <h3>other carbonara</h3>
+      </div>
+    </div>
+  </section>
+  <footer id="footer-selection">
+    <button>eat out</button>
+    <button>country selection</button>
+  </footer>
+  <script src="main.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+</body>
+
+</html>
