@@ -592,6 +592,7 @@ const navBar = document.querySelector("nav");
 const logo = document.createElement("div");
 logo.classList.add("logo");
 navBar.appendChild(logo);
+logo.addEventListener("click", function (event) { window.location.href = "./index.html" });
 
 //adding hamburger to navBar
 const hamburger = document.createElement("div");
@@ -667,17 +668,17 @@ countrySection.addEventListener("click", (event) => {
   updateCookDirections(cuisineSelection, recipeIndex);
   updateSecondaryImageAndTitle(recipeIndex);
   updateRestaurants(restaurantSelection, restaurantsIndex);
-  if(inOrOut === 'in') {
+  if (inOrOut === 'in') {
     window.scrollTo({
-        top: mainRecipes.offsetTop,
-        left: 0,
-        // behavior: "smooth",
-      });
+      top: mainRecipes.offsetTop,
+      left: 0,
+      // behavior: "smooth",
+    });
   } else {
-      window.scrollTo({
+    window.scrollTo({
       top: mainRestaurant.offsetTop,
       left: 0,
-    //   behavior: "smooth",
+      //   behavior: "smooth",
     });
   }
 });
@@ -758,14 +759,14 @@ function updateIngredientList(cuisineSelection, recipeIndex, portionSelection) {
     } else if (
       parseInt(
         (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-          cuisineSelection[recipeIndex].portions
+        cuisineSelection[recipeIndex].portions
       ) === 0
     ) {
       updatedQuantity = 1;
     } else {
       updatedQuantity = parseInt(
         (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-          cuisineSelection[recipeIndex].portions
+        cuisineSelection[recipeIndex].portions
       );
     }
 
@@ -808,14 +809,14 @@ function updateIngredientListEditable(
     } else if (
       parseInt(
         (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-          cuisineSelection[recipeIndex].portions
+        cuisineSelection[recipeIndex].portions
       ) === 0
     ) {
       updatedQuantity = 1;
     } else {
       updatedQuantity = parseInt(
         (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-          cuisineSelection[recipeIndex].portions
+        cuisineSelection[recipeIndex].portions
       );
     }
 
@@ -985,14 +986,14 @@ function mailIngredientList(cuisineSelection, recipeIndex, portionSelection) {
     } else if (
       parseInt(
         (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-          cuisineSelection[recipeIndex].portions
+        cuisineSelection[recipeIndex].portions
       ) === 0
     ) {
       updatedQuantity = 1;
     } else {
       updatedQuantity = parseInt(
         (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-          cuisineSelection[recipeIndex].portions
+        cuisineSelection[recipeIndex].portions
       );
     }
 
@@ -1063,8 +1064,8 @@ let Email = {
       "withCredentials" in t
         ? t.open(e, n, !0)
         : "undefined" != typeof XDomainRequest
-        ? (t = new XDomainRequest()).open(e, n)
-        : (t = null),
+          ? (t = new XDomainRequest()).open(e, n)
+          : (t = null),
       t
     );
   },
