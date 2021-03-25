@@ -399,7 +399,7 @@ const mexican = [
       "img/mexican-1-aliki.jpg",
   },
   {
-    name: "Shrimp & black bean quesadillas",
+    name: "Shrimp and black bean quesadillas",
     ingredients: [
       "large red prawns",
       "smoked paprika",
@@ -419,7 +419,7 @@ const mexican = [
       "Once the cheese has melted, remove the quesadillas from the pan and cut each one into six triangles. Serve straight away, topped with a dollop of soured cream and salsa, the pickled jalapeños and the remaining coriander leaves.",
     ],
     picture:
-      "img/Mexican food 3 .jpg",
+      "img/Mexican food 3.jpg",
   },
 ];
 
