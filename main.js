@@ -916,11 +916,11 @@ function updateCookDirections(cuisineSelection, recipeIndex) {
 }
 
 function updatePageTitleAndIntro(cuisineSelection) {
-  const pageTitle = document.body.querySelector(".country-title");
-  const pageIntro = document.body.querySelector(".country-description");
+  const pageTitle = document.body.querySelectorAll(".country-title");
+  const pageIntro = document.body.querySelectorAll(".country-description");
   // using a fix index of 0 since the name of the cuisine and the intro are only present in the first recipe of every object
-  pageTitle.innerHTML = cuisineSelection[0].cuisine;
-  pageIntro.innerHTML = cuisineSelection[0].intro;
+  pageTitle.forEach(item => item.innerHTML = cuisineSelection[0].cuisine);
+  pageIntro.forEach(item => item.innerHTML = cuisineSelection[0].intro);
 }
 
 function updateMainImageAndTitle(recipeIndex) {
