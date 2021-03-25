@@ -618,7 +618,7 @@ navRestaurant.classList.add("out");
 navRestaurant.innerHTML = "Eat out";
 navLinks.appendChild(navRestaurant);
 
-navLinks.addEventListener("click", function (event) {
+navLinks.addEventListener("click", (event) => {
   if (event.target.className === "nav-home") {
     window.location.href = "./index.html";
   } else {
@@ -638,7 +638,7 @@ const navBar = document.querySelector("nav");
 const logo = document.createElement("div");
 logo.classList.add("logo");
 navBar.appendChild(logo);
-logo.addEventListener("click", function (event) { window.location.href = "./index.html" });
+logo.addEventListener("click", () => { window.location.href = "./index.html" });
 
 //adding hamburger to navBar
 const hamburger = document.createElement("div");
@@ -647,12 +647,12 @@ navBar.appendChild(hamburger);
 
 //adding open-close mechanism
 
-hamburger.addEventListener("click", function () {
+hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("nav-closed");
   navLinks.classList.toggle("nav-closed");
 });
 
-navLinks.addEventListener("click", function () {
+navLinks.addEventListener("click", () => {
   hamburger.classList.toggle("nav-closed");
   navLinks.classList.toggle("nav-closed");
 });
