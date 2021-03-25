@@ -16,19 +16,50 @@ h1, h2, h3 {
     color: #E0705F;
 }
 
+h1 {
+    padding: 20px;
+    font-size: 30px;
+    margin-top: 15px;
+}
+
 h2 {
     padding: 15px;
+    font-size: 20px;
+    margin-top: 15px;
 }
 
 h3 {
     width: 100%;
     padding: 5px;
-    font-size: 20px;
+    font-size: 16px;
+    margin-top: 15px;
 }
 
 p {
     font-size: 16px;
+    max-width: 600px;
+    margin-top: 15px;
 }
+
+button {
+	background-color:#ffd078;
+	border-radius:4px;
+	border:1px solid #ffbd7a;
+	display:inline-block;
+	cursor:pointer;
+	color:#e0705f;
+	font-size:16px;
+	padding:8px 15px;
+	text-decoration:none;
+}
+button:hover {
+	filter: brightness(0.9);
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+
 
 
 /* HEADER and entryquestion*/
@@ -81,6 +112,7 @@ p {
 .country-card {
     height: 20%;
     padding-top: 20px;
+    cursor: pointer;
     
 }
 .country-card a {
@@ -111,6 +143,7 @@ nav {
     margin: 10px;
     background-image: url(./img/logo.svg);
     background-size: contain;
+    cursor: pointer;
 }
 
 .hamburger.nav-closed {
@@ -158,18 +191,30 @@ nav {
     flex-direction: column;
 }
 
+.country-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #recipe-main {
     padding-top: 60px;
 }
 
-#recipe-main img {
-    width: 400px;
-    height: auto;
+#recipe-main img, #img-restaurant {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
 }
 
-#more-recipes img {
+#more-recipes img, .small-photo {
     width: 200px;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
+}
+
+#portions {
+    padding: 15px;
 }
 
 .ingredient-list {
@@ -222,10 +267,52 @@ input[type=number] {
 }
 
 .selected-button {
-    background-color: orangered;
+    background-color: #E0705F;
+    color: #FFD078;
+}
+
+.email-address {
+    padding: 5px;
+    font-size: 16px;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    color: #121821;
+    border-style: solid;
+    border-radius: 2px;
+    box-shadow: 0px 0px 1px rgba(66,66,66,.75);
+}
+
+.done, .edit, #email {
+    background-color: #7E9FD4;
+    color: #121821;
+    margin-left: 15px;
+    border-color: #7391c2;
+}
+
+.directions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .alternative-recipes {
     cursor: pointer;
 }
 
+/* Restaurants */
+
+#main-restaurant {
+    padding-top: 60px;
+}
+
+#restaurant-main {
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#map {
+    margin-top: 15px;
+}
