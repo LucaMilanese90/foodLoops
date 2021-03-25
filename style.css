@@ -319,7 +319,7 @@ input[type=number] {
 
 @media (max-width: 599px) {
     .alternatives {
-        width: 100vw
+        width: 100vw;
     }
   }
   
