@@ -65,7 +65,7 @@ img {
     border-radius: 2px;
 }
 
-.white-space {
+.white-space-recipe, .white-space-restaurant {
     height: 60px;
     background-color: white;
 }

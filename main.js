@@ -990,7 +990,7 @@ alternativeRecipes.forEach((item) => {
     updateCookDirections(cuisineSelection, recipeIndex);
     updateDefaultButtonQuantity();
     // scroll the window to the beginning of recipe-main div
-    const ingredientListDiv = document.body.querySelector("#recipe-main");
+    const ingredientListDiv = document.body.querySelector(".white-space-recipe");
     window.scrollTo({
       top: ingredientListDiv.offsetTop,
       left: 0,
@@ -1214,7 +1214,7 @@ alternativeRestaurants.forEach((item) => {
     restaurantsIndex = UpdaterestaurantsIndex(restaurantsName);
     updateRestaurants(restaurantSelection, restaurantsIndex);
     // scroll the window to the beginning of recipe-main div
-    const restaurantDiv = document.body.querySelector("#restaurant-main");
+    const restaurantDiv = document.body.querySelector(".white-space-restaurant");
     window.scrollTo({
       top: restaurantDiv.offsetTop,
       left: 0,
