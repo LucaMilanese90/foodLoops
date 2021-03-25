@@ -160,7 +160,7 @@ const greek = [
 const syrian = [
   {
     cuisine: "Syrian",
-    intro: "Italian cuisine is bla bla bla...",
+    intro: "Syrian cuisine mainly uses eggplant, zucchini, garlic, meat (mostly from lamb and sheep), sesame seeds, rice, chickpeas, fava beans, lentils, cabbage, cauliflower, vine leaves, pickled turnips, cucumbers, tomatoes, olive oil, lemon juice, mint, pistachios, honey and fruits.At the beginning of the 21st century, selections of appetizers known as mezze are customarily served along with Arabic bread before the Syrian meal's main course, which is followed by coffee, with sweet confectioneries or fruits at will. Many recipes date from at least the 13th century.",
     name: "Grilled Aubergine With Beef Keema and Pine Nuts",
     ingredients: ['vegetable oil',
       'sticks of cinnamon',
@@ -257,7 +257,7 @@ const syrian = [
 const german = [
   {
     cuisine: "German",
-    intro: "Italian cuisine is bla bla bla...",
+    intro: "The cuisine of Germany (German: Deutsche Küche) is made up of many different local or regional cuisines, reflecting the country's federal history. Germany itself is part of a larger cultural region, Central Europe, sharing many traditions with neighbouring countries such as Poland and the Czech Republic. Southern regions, like Bavaria and Swabia, share dishes with Austrian and parts of Swiss cuisine.",
     name: "Beef Rouladen",
     ingredients: [
       "slices top round",
