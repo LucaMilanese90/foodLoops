@@ -431,7 +431,7 @@ const mexico = [
     name: "Maria Bonita",
     about:
       "Berlin‘s first authentic Mexican Bistro opened in 2009 and set the start of the Mexican Food–Revolution in Berlin. Ever since people enjoy traditionally prepared dishes, hand-made salsas and Margaritas just like in Mexico. So have a bite, close your eyes and take a little trip “south of the border.",
-    imageUrl: "./src.images/Maria Bonita.jpg",
+    imageUrl: "img/Maria Bonita.jpg",
     mapUrl:
       "https://maps.google.com/maps?q=maria%20bonita%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
     buttonUrl: "https://www.mariabonita.de/",
@@ -441,7 +441,7 @@ const mexico = [
     country: "Mexico",
     name: "Zapata",
     about: "Lorem50",
-    imageUrl: "./src.images/Zapata.jpg",
+    imageUrl: "img/Zapata.jpg",
     mapUrl:
       "https://maps.google.com/maps?q=zapata%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
     buttonUrl: "http://zapata-berlin.de/",
@@ -451,7 +451,7 @@ const mexico = [
     country: "Mexico",
     name: "Tacoriño",
     about: "Lorem50",
-    imageUrl: "./src.images/Tacoriño .jpg",
+    imageUrl: "img/Tacorino.jpg",
     mapUrl:
       "https://maps.google.com/maps?q=tacori%C3%B1o%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
     buttonUrl: "https://www.tacorino.de/",
