@@ -294,7 +294,7 @@ const mexican = [
     intro: "Mexican cuisine is bla bla bla...",
     name: "Lemon sole with chipotle & chilli recado",
     ingredients: [
-      "lemoon sole",
+      "lemon sole",
       "lime",
       "cloves of garlic",
       "dried chipotle chillies",
@@ -353,7 +353,7 @@ const mexican = [
   {
     name: "Shrimp & black bean quesadillas",
     ingredients: [
-      "large red praawns",
+      "large red prawns",
       "tbsp smoked paprika",
       "vegetable oil",
       "mature cheddar cheese",
@@ -412,133 +412,133 @@ const mexico = [
 
 const greece = [
   {
-    country: "Mexico",
-    name: "Maria Bonita",
+    country: "Greece",
+    name: "Rises Delicacies",
     about:
-      "Berlin‘s first authentic Mexican Bistro opened in 2009 and set the start of the Mexican Food–Revolution in Berlin. Ever since people enjoy traditionally prepared dishes, hand-made salsas and Margaritas just like in Mexico. So have a bite, close your eyes and take a little trip “south of the border.",
+      "Nice small greek bistro with homemade food, and a little shop with high quality products to buy and cook at home",
     imageUrl: "./src.images/Maria Bonita.jpg",
     mapUrl:
-      "https://maps.google.com/maps?q=maria%20bonita%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
-    buttonUrl: "https://www.mariabonita.de/",
+      "https://maps.google.com/maps?q=Rises%20Delicacies%20berlin%20restaurant&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    buttonUrl: "https://www.facebook.com/RisesDelicacies/",
   },
 
   {
-    country: "Mexico",
-    name: "Zapata",
-    about: "Lorem50",
+    country: "Greece",
+    name: "Berkis",
+    about: "One of the few places where you can get traditional souvlaki. TIP: try adding sauerkraut instead of Pommes",
     imageUrl: "./src.images/Zapata.jpg",
     mapUrl:
-      "https://maps.google.com/maps?q=zapata%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
-    buttonUrl: "http://zapata-berlin.de/",
+      "https://maps.google.com/maps?q=Berkis%20berlin%20restaurant&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    buttonUrl: "https://www.berkis.de/",
   },
 
   {
-    country: "Mexico",
-    name: "Tacoriño",
-    about: "Lorem50",
+    country: "Greece",
+    name: "Aplo",
+    about: " A bit pricey but also a nice place to get traditional souvlaki.",
     imageUrl: "./src.images/Tacoriño .jpg",
     mapUrl:
-      "https://maps.google.com/maps?q=tacori%C3%B1o%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
-    buttonUrl: "https://www.tacorino.de/",
+      "https://maps.google.com/maps?q=Aplo%20berlin%20restaurant&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    buttonUrl: "https://aplofoods.com/",
   },
 ];
 
 const germany = [
   {
-    country: "Mexico",
-    name: "Maria Bonita",
+    country: "Germany",
+    name: "Zur letzten Instanz",
     about:
-      "Berlin‘s first authentic Mexican Bistro opened in 2009 and set the start of the Mexican Food–Revolution in Berlin. Ever since people enjoy traditionally prepared dishes, hand-made salsas and Margaritas just like in Mexico. So have a bite, close your eyes and take a little trip “south of the border.",
-    imageUrl: "./src.images/Maria Bonita.jpg",
+      "The restaurant „Zur letzten Instanz” is the eldest restaurant in Berlin and ranks among the sights of the capital. Its origin is in 1621, when a former equestrian servant of the elector opened a gin mill at this place. The restaurant got its present name when mainly guests from the nearby court came to drink their experiences ”in the last instance”. Historic additions survived despite the reconstruction after the war, even Napoleon himself was served in the restaurant at the tiled stove. Our history, the two restaurants, private room and beer garden invite our guests to stay. Berlin cuisine a la carte with exclusive regional products and fresh beer on tap ensure culinary moments in original ambiance.",
+    imageUrl: "",
     mapUrl:
-      "https://maps.google.com/maps?q=maria%20bonita%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
-    buttonUrl: "https://www.mariabonita.de/",
+      "https://maps.google.com/maps?q=Zur%20letzten%20Instanz%20restaurant%20%20Berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    buttonUrl: "https://zurletzteninstanz.com/",
   },
 
   {
-    country: "Mexico",
-    name: "Zapata",
-    about: "Lorem50",
-    imageUrl: "./src.images/Zapata.jpg",
+    country: "Germany",
+    name: "Katerschmaus",
+    about: "Ahoy, you hungry cats and Katers.We have successfully undocked, now the Katerschmaus is finally setting sail again. Now we are there for you from Tuesday to Friday from 1 p.m. to 11 p.m and Saturday 5pm-11pm. Look forward to a menu that makes you happy from lunch to dinner – full of trans-European dishes, mostly with regional goods. The new chef Robin Marondel and restaurant manager Patricia Allegretta, together with Matze and many familiar faces, will warmly welcome you.",
+    imageUrl: "",
     mapUrl:
-      "https://maps.google.com/maps?q=zapata%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
-    buttonUrl: "http://zapata-berlin.de/",
+      "https://maps.google.com/maps?q=Katerschmaus%20restaurant%20%20Berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    buttonUrl: "https://www.katerschmaus.de/en",
   },
 
   {
-    country: "Mexico",
-    name: "Tacoriño",
-    about: "Lorem50",
-    imageUrl: "./src.images/Tacoriño .jpg",
+    country: "Germany",
+    name: "Hoppegarten",
+    about: "Hinter dem Schlosspark-Theater und Adria-Kino gelegen, hat sich der Hoppegarten zu einer beliebten Steglitzer Gastro-Institution entwickelt. Es ist ein gemütliches, familienfreundliches Lokal — ein Kommunikationszentrum für jüngere und jung gebliebene Leute. Dem publikumsstarken Tresen und dem Restaurant ist ein Cafébereich und ein beheizter Wintergarten angeschlossen — Freunde von Pool Billard und Kicker kommen auch auf ihre Kosten. Unser junges, eingespieltes Team freut sich, Sie im Hoppegarten begrüßen zu dürfen. Egal ob Stammgast oder auf kulinarischer Erkundungsreise — lassen Sie sich von unserem Service überzeugen und freuen Sie sich auf eine angenehme Zeit in behaglicher Atmosphäre.",
+    imageUrl: "",
     mapUrl:
-      "https://maps.google.com/maps?q=tacori%C3%B1o%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
-    buttonUrl: "https://www.tacorino.de/",
+      "https://maps.google.com/maps?q=Hoppegarten%20restaurant%20%20Berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    buttonUrl: "http://www.hoppegarten-berlin.de/",
   },
 ];
 
 const italy = [
   {
-    country: "Mexico",
-    name: "Maria Bonita",
+    country: "Italy",
+    name: "Focacceria",
     about:
-      "Berlin‘s first authentic Mexican Bistro opened in 2009 and set the start of the Mexican Food–Revolution in Berlin. Ever since people enjoy traditionally prepared dishes, hand-made salsas and Margaritas just like in Mexico. So have a bite, close your eyes and take a little trip “south of the border.",
-    imageUrl: "./src.images/Maria Bonita.jpg",
+      "Best Focaccia in Berlin, next to Weinmeister park",
+    imageUrl: "",
     mapUrl:
-      "https://maps.google.com/maps?q=maria%20bonita%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
-    buttonUrl: "https://www.mariabonita.de/",
+      "https://maps.google.com/maps?q=La%20focacceria%20Fehrbelliner%20Str.%2024,%2010119%20Berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    buttonUrl: "https://www.tripadvisor.com/Restaurant_Review-g187323-d1028366-Reviews-Focacceria-Berlin.html",
   },
 
   {
-    country: "Mexico",
-    name: "Zapata",
-    about: "Lorem50",
-    imageUrl: "./src.images/Zapata.jpg",
+    country: "Italy",
+    name: "Gazzo",
+    about: "Original pizza Napolitana in Neukölln.",
+    imageUrl: "",
     mapUrl:
-      "https://maps.google.com/maps?q=zapata%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
-    buttonUrl: "http://zapata-berlin.de/",
+      "https://maps.google.com/maps?q=Gazzo%20Berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    buttonUrl: "https://www.gazzopizza.com/",
   },
 
   {
-    country: "Mexico",
-    name: "Tacoriño",
-    about: "Lorem50",
-    imageUrl: "./src.images/Tacoriño .jpg",
+    country: "Italy",
+    name: "Centro Italia",
+    about: "This one is not a restaurant, best best supermarket in Berlin to get good quality italian products.",
+    imageUrl: "",
     mapUrl:
-      "https://maps.google.com/maps?q=tacori%C3%B1o%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
-    buttonUrl: "https://www.tacorino.de/",
+      "https://maps.google.com/maps?q=Gro%C3%9Fbeerenstr.%20169-171,%2012277%20Berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    buttonUrl: "https://centro-italia.de/",
   },
 ];
 
 const syria = [
   {
-    country: "Mexico",
-    name: "Maria Bonita",
+    country: "Syria",
+    name: "Yarok",
     about:
-      "Berlin‘s first authentic Mexican Bistro opened in 2009 and set the start of the Mexican Food–Revolution in Berlin. Ever since people enjoy traditionally prepared dishes, hand-made salsas and Margaritas just like in Mexico. So have a bite, close your eyes and take a little trip “south of the border.",
-    imageUrl: "./src.images/Maria Bonita.jpg",
+      "Yarok offers fine Syrian food from Damascus. The food is always prepared personally and lovingly with fresh ingredients and served quickly. The special Syrian cuisine has been adapted to European tastes without losing its authenticity.",
+    imageUrl: "",
     mapUrl:
-      "https://maps.google.com/maps?q=maria%20bonita%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
-    buttonUrl: "https://www.mariabonita.de/",
+      "https://maps.google.com/maps?q=Yarok%20restaurant%20berlin%20&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    buttonUrl: "https://www.yarok-restaurant.de/",
   },
 
   {
-    country: "Mexico",
-    name: "Zapata",
-    about: "Lorem50",
-    imageUrl: "./src.images/Zapata.jpg",
+    country: "Syria",
+    name: "Malakeh",
+    about: "The chef Malakeh Jazmati, was born in Damascus, Syria. She moved from politics to the kitchen , which brings together the Arab and foreign friends with their children on one table to see the warmth of heart and love with a plate and fork.",
+    imageUrl: "",
     mapUrl:
-      "https://maps.google.com/maps?q=zapata%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
-    buttonUrl: "http://zapata-berlin.de/",
+      "https://maps.google.com/maps?q=malakeh%20restaurant%20berlin%20&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    buttonUrl: "https://www.malakeh-restaurant.de/",
   },
 
   {
-    country: "Mexico",
-    name: "Tacoriño",
-    about: "Lorem50",
-    imageUrl: "./src.images/Tacoriño .jpg",
+    country: "syria",
+    name: "Aldimashqi",
+    about: "We offer the most delicious specialties of Syrian cuisine! Enjoy with us a new taste of fine, exquisite dishes of Syrian cuisine. We welcome you and your family!",
+    imageUrl: "",
     mapUrl:
-      "https://maps.google.com/maps?q=tacori%C3%B1o%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
-    buttonUrl: "https://www.tacorino.de/",
+      "https://maps.google.com/maps?q=Reuterstra%C3%9Fe%2028,%2012047%20Berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    buttonUrl: "https://aldimashqi-rayan.business.site/?utm_source=gmb&utm_medium=referral",
   },
 ];
 
