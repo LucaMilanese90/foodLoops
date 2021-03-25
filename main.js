@@ -46,7 +46,7 @@ const italian = [
     ],
     quantity: [2, 1, 1, 1, 100, 300, 300, 1, 1, 1, 600, 300, 200,],
     unitMeasure: ["", "", "", "", "g", "g", "g", "", "", "ml", "g", "g", "g",],
-    portions: 8,
+    portions: 4,
     directions: [
       "Prepare Bolognesa sauce: In a saucepan add oil, onion, shallots and carrot and prosciutto or bacon. Allow to cook for a few minutes over medium heat so that the onion becomes translucent and the bacon releases some of its fat.",
       "Add the pork and beef mince and season with nutmeg, cinnamon and salt. Cook the mince over medium-high heat, stirring often until browned, about 10 minutes. Pour in the red wine, then increase the heat and let simmer for a few minutes for the alcohol to evaporate. Add the tomatoes (or passata) and mix well. Bring to a simmer, cover, reduce heat to low and simmer gently for 1 1/2 to 2 hours. Check the sauce occasionally and stir from time to time. Adjust seasoning to taste. Remove sauce from heat and set aside.",
@@ -61,7 +61,7 @@ const italian = [
     ingredients: ["egg yolks", "granulated sugar", "heavy cream", "mascarpone", "espresso", "rum", "cocoa powder", "ladyfingers", "bittersweet chocolate",],
     quantity: [4, 100, 1, 227, 2, 2, 2, 200, 2,],
     unitMeasure: ["", "g", "", "", "", "", "", "g", "g",],
-    portions: 8,
+    portions: 4,
     directions: [
       "Using an electric mixer in a medium bowl, whip together egg yolks and 1/4 cup/50 grams sugar until very pale yellow and about tripled in volume. A slight ribbon should fall from the beaters (or whisk attachment) when lifted from the bowl. Transfer mixture to a large bowl, wiping out the medium bowl used to whip the yolks and set aside.",
       "In the medium bowl, whip cream and remaining 1/4 cup/50 grams sugar until it creates soft-medium peaks. Add mascarpone and continue to whip until it creates a soft, spreadable mixture with medium peaks. Gently fold the mascarpone mixture into the sweetened egg yolks until combined.",
@@ -144,7 +144,7 @@ const greek = [
     ],
     quantity: [25, 4, 1, "", 2, 2, 60, "", ""],
     unitMeasure: ["", "", "", "", "", "", "ml", "", ""],
-    portions: 6,
+    portions: 4,
     directions: [
       "To prepare this Greek shrimp saganaki recipe start by peeling and cleaning the shrimps.",
       "Continue preparing the sauce. To prepare the sauce for this shrimp saganaki recipe, dice the fresh tomatoes in small cubes and let them strain in a colander, so that no excess water is added to the sauce.",
@@ -159,7 +159,7 @@ const greek = [
 ];
 const syrian = [
   {
-    cuisine: "syrian",
+    cuisine: "Syrian",
     intro: "Italian cuisine is bla bla bla...",
     name: "Grilled Aubergine With Beef Keema and Pine Nuts",
     ingredients: ['vegetable oil',
@@ -256,7 +256,7 @@ const syrian = [
 ];
 const german = [
   {
-    cuisine: "german",
+    cuisine: "German",
     intro: "Italian cuisine is bla bla bla...",
     name: "Beef Rouladen",
     ingredients: [
@@ -270,7 +270,7 @@ const german = [
     ],
     quantity: [6, 3, 1, 3, 2, "", 1],
     unitMeasure: ["", "", "", "", "", "", ""],
-    portions: 6,
+    portions: 4,
     directions: [
       "Season beef slices with salt and freshly ground pepper. Thinly spread mustard on top of each slice.",
       "Divide bacon, pickle, and onion slices on one end of each slice.",
@@ -580,7 +580,7 @@ const syria = [
   },
 
   {
-    country: "syria",
+    country: "Syria",
     name: "Aldimashqi",
     about: "We offer the most delicious specialties of Syrian cuisine! Enjoy with us a new taste of fine, exquisite dishes of Syrian cuisine. We welcome you and your family!",
     imageUrl: "img/aldimashqi-syrian.jpeg",
