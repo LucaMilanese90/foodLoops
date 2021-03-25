@@ -163,7 +163,8 @@ const syrian = [
     name: "Grilled Aubergine With Beef Keema and Pine Nuts",
     ingredients: ['vegetable oil',
       'sticks of cinnamon',
-      'cardamom pods', 'cloves',
+      'cardamom pods',
+      'cloves',
       'medium onions, chopped',
       'ginger, chopped',
       'garlic, chopped',
@@ -180,9 +181,9 @@ const syrian = [
       'bunch spring onions',
       'tomato',
       'green chillies, chopped',
-      'tsp coriander, chopped'],
+      'coriander, chopped'],
     quantity: [4, 3, 4, 5, 2, 1, 1, 0.5, 0.5, 1, 2, 3, 0.5, 800, 2, 1, 200, 1, 1, 2, 2],
-    unitMeasure: ['tbsp', '', '', '', '', 'tbps', 'tbsp', 'tsp', 'tsp', 'tsp', 'tbsp', '', '', 'tsp', 'g', '', 'tbsp', 'tbsp', 'g', '', '', '', 'tsp'],
+    unitMeasure: ['tbsp', '', '', '', '', 'tbps', 'tbsp', 'tsp', 'tsp', 'tsp', 'tbsp', '', 'tsp', 'g', '', 'tbsp', 'g', '', '', '', 'tsp'],
     portions: 4,
     directions: [
       "Heat the vegetable oil in a thick-bottomed saucepan. Add the cinnamon, cardamom and cloves, sauté for half a minute, then add the chopped onions and sauté over a medium heat, stirring occasionally, until golden brown.",
@@ -401,15 +402,15 @@ const mexican = [
     name: "Shrimp & black bean quesadillas",
     ingredients: [
       "large red prawns",
-      "tbsp smoked paprika",
+      "smoked paprika",
       "vegetable oil",
       "mature cheddar cheese",
       "flour tortillas",
-      "tbsp pickled jalapenos",
+      "pickled jalapenos",
       "a few sprigs of fresh coriander",
     ],
     quantity: [200, 1, "", 250, 4, 4, ""],
-    unitMeasure: ["g", "", "", "g", "", "", ""],
+    unitMeasure: ["g", "tbsp", "", "g", "", "tbsp", ""],
     portions: 3,
     directions: [
       "In a small bowl, toss the prawns with the smoked paprika and a little sea salt and black pepper. Heat a small frying pan with 1 teaspoon of the oil. Sear the prawns for 1 minute each side. Remove, let cool and halve lengthways. Set aside.",
@@ -742,6 +743,8 @@ const portionsButtons = portionDiv.querySelectorAll(".portions-button");
 function updateDefaultButtonQuantity() {
   const portionDiv = document.body.querySelector("#portions");
   const portionsButtons = portionDiv.querySelectorAll(".portions-button");
+  document.body.querySelector(".done").classList.add("not-visible");
+  document.body.querySelector(".edit").classList.remove("not-visible");
   portionsButtons.forEach((item) => {
     // adding the class '.selected-button' on page load to the default portion size
     if (item.innerHTML == portionSelection) {
@@ -794,7 +797,7 @@ function getCommonDenominator(a, b) {
   // Since there is a limited precision we need to limit the value.
   if (b < 0.0000001) return a;
   // Discard any fractions due to limitations in precision.
-  return gcd(b, Math.floor(a % b));
+  return getCommonDenominator(b, Math.floor(a % b));
 };
 
 function displayFractionlNumbers(number) {
@@ -837,33 +840,14 @@ function updateIngredientList(cuisineSelection, recipeIndex, portionSelection) {
     if (typeof cuisineSelection[recipeIndex].quantity[i] != "number") {
       updatedQuantity = cuisineSelection[recipeIndex].quantity[i];
       // check if the quantity needs to be displayed in a fractional way
-    } else if (fractionalUnits.includes(cuisineSelection[recipeIndex].unitMeasure)) {
-      updatedQuantity = displayFractionlNumbers(cuisineSelection[index].quantity * portionSelection /
-        cuisineSelection[recipeIndex].portions);
+    } else if (fractionalUnits.includes(cuisineSelection[recipeIndex].unitMeasure[i])) {
+      updatedQuantity = displayFractionlNumbers((cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions));
       // setting minimun quantity to 1 so the Math.rond will never output 0
     } else if (Math.round(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions) === 0) {
       updatedQuantity = Math.ceil(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions);
     } else {
       updatedQuantity = Math.round(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions);
     }
-
-    /* // excluding quantity update for non-numeric quantity i.e. black pepper
-    if (typeof cuisineSelection[recipeIndex].quantity[i] != "number") {
-      updatedQuantity = cuisineSelection[recipeIndex].quantity[i];
-      // setting minimun quantity to 1 so the parseInt rounding will never output 0
-    } else if (
-      parseInt(
-        (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-        cuisineSelection[recipeIndex].portions
-      ) === 0 && cuisineSelection[recipeIndex].unitMeasure[i] === ''
-    ) {
-      updatedQuantity = 1;
-    }else {
-      updatedQuantity = parseInt(
-        (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-        cuisineSelection[recipeIndex].portions
-      );
-    } */
 
     const quantityDiv = document.createElement("div");
     quantityDiv.classList.add("quantity-div");
@@ -897,22 +881,18 @@ function updateIngredientListEditable(
   ingredientListDiv.innerHTML = "";
   for (let i = 0; i < cuisineSelection[recipeIndex].ingredients.length; i++) {
     let updatedQuantity;
-    // excluding quantity update for non-numeric quantity i.e. black pepper
+
     if (typeof cuisineSelection[recipeIndex].quantity[i] != "number") {
       updatedQuantity = cuisineSelection[recipeIndex].quantity[i];
-      // setting minimun quantity to 1 so the parseInt rounding will never output 0
-    } else if (
-      parseInt(
-        (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-        cuisineSelection[recipeIndex].portions
-      ) === 0
-    ) {
-      updatedQuantity = 1;
+      // check if the quantity needs to be displayed in a fractional way
+    } else if (fractionalUnits.includes(cuisineSelection[recipeIndex].unitMeasure[i])) {
+      updatedQuantity = displayFractionlNumbers(cuisineSelection[recipeIndex].quantity[i] * portionSelection /
+        cuisineSelection[recipeIndex].portions);
+      // setting minimun quantity to 1 so the Math.rond will never output 0
+    } else if (Math.round(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions) === 0) {
+      updatedQuantity = Math.ceil(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions);
     } else {
-      updatedQuantity = parseInt(
-        (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-        cuisineSelection[recipeIndex].portions
-      );
+      updatedQuantity = Math.round(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions);
     }
 
     const quantityDiv = document.createElement("div");
@@ -969,7 +949,7 @@ function updatePageTitleAndIntro(cuisineSelection) {
 
 function updateMainImageAndTitle(recipeIndex) {
   const ingredientListDiv = document.body.querySelector("#recipe-main");
-  const mainImage = ingredientListDiv.querySelector("img");
+  const mainImage = ingredientListDiv.querySelector(".main-image");
   mainImage.src = cuisineSelection[recipeIndex].picture;
   mainImage.alt = cuisineSelection[recipeIndex].name;
   const mainTitle = ingredientListDiv.querySelector("#recipe-main-title");
@@ -1074,22 +1054,18 @@ function mailIngredientList(cuisineSelection, recipeIndex, portionSelection) {
   let mailIngredient = "Ingredient list: ";
   for (let i = 0; i < cuisineSelection[recipeIndex].ingredients.length; i++) {
     let updatedQuantity;
-    // excluding quantity update for non-numeric quantity i.e. black pepper
+
     if (typeof cuisineSelection[recipeIndex].quantity[i] != "number") {
       updatedQuantity = cuisineSelection[recipeIndex].quantity[i];
-      // setting minimun quantity to 1 so the parseInt rounding will never output 0
-    } else if (
-      parseInt(
-        (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-        cuisineSelection[recipeIndex].portions
-      ) === 0
-    ) {
-      updatedQuantity = 1;
+      // check if the quantity needs to be displayed in a fractional way
+    } else if (fractionalUnits.includes(cuisineSelection[recipeIndex].unitMeasure[i])) {
+      updatedQuantity = displayFractionlNumbers(cuisineSelection[recipeIndex].quantity[i] * portionSelection /
+        cuisineSelection[recipeIndex].portions);
+      // setting minimun quantity to 1 so the Math.rond will never output 0
+    } else if (Math.round(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions) === 0) {
+      updatedQuantity = Math.ceil(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions);
     } else {
-      updatedQuantity = parseInt(
-        (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-        cuisineSelection[recipeIndex].portions
-      );
+      updatedQuantity = Math.round(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions);
     }
 
     let updatedUnitMeasure = cuisineSelection[recipeIndex].unitMeasure[i];
