@@ -803,6 +803,7 @@ function getCommonDenominator(a, b) {
   return getCommonDenominator(b, Math.floor(a % b));
 };
 
+// takes a number and convert it's decimal into a fraction rounded by 0.25 (i.e. 1.75 -> 1 3/4)
 function displayFractionlNumbers(number) {
   const roundedQuantity = (Math.round(number / 0.25) * 0.25) === 0 ?
     0.25 :
@@ -826,6 +827,15 @@ function displayFractionlNumbers(number) {
       : `${parseInt(roundedQuantity)} ${Math.floor(numerator)}/${Math.floor(denominator)}`;
 
   return finalValue
+}
+
+// takes a string in fractional value and convert it back in a number (i.e. 1 3/4 -> 1.75)
+function convertToNumber(str) {
+  if (str.length === 3) {
+    return parseInt(str.slice(0, 1)) / parseInt(str.slice(-1))
+  } else {
+    return parseInt(str.slice(0, (str.length - 4))) + (parseInt(str.slice(-3)) / parseInt(str.slice(-1)))
+  }
 }
 
 // creating strings for recipe ingredient list
@@ -904,12 +914,15 @@ function updateIngredientListEditable(
     // add input.type number and placeholder value to all ingredients quantityDiv
     const quantityInput = document.createElement("input");
     quantityInput.type = "number";
-    // if the quantity value is not a number set the placeholder value to '' and disable the input
-    if (typeof updatedQuantity != "number") {
+
+    if (updatedQuantity === "") {
       quantityInput.placeholder = "";
       quantityInput.disabled = true;
+      // if updatedQuantity is a string then it must be a fractional value (i.e. 1 3/4) so we need to convert it back to a number
+    } else if (typeof updatedQuantity === 'string') {
+      quantityInput.placeholder = convertToNumber(updatedQuantity);
     } else {
-      quantityInput.placeholder = parseInt(updatedQuantity);
+      quantityInput.placeholder = updatedQuantity;
     }
     quantityInput.classList.add("quantity");
     quantityDiv.appendChild(quantityInput);
@@ -1020,10 +1033,8 @@ document.body.querySelector(".done").addEventListener("click", () => {
   let personalizedPortion = portionSelection;
   document.body.querySelectorAll(".quantity").forEach((item) => {
     if (item.value != "") {
-      personalizedPortion = (
-        (parseInt(item.value) * portionSelection) /
-        parseInt(item.placeholder)
-      ).toFixed(1);
+      personalizedPortion =
+        (item.value * portionSelection / item.placeholder).toFixed(1);
     }
   });
 
