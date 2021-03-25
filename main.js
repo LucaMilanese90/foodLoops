@@ -12,7 +12,7 @@ const italian = [
   {
     cuisine: "Italian",
     intro: "Italian cuisine is a Mediterranean cuisine consisting of the ingredients, recipes and cooking techniques developed across the Italian Peninsula since antiquity, and later spread around the world together with waves of Italian diaspora. Significant changes occurred with the colonization of the Americas and the introduction of potatoes, tomatoes, capsicums, maize and sugar beet - the latter introduced in quantity in the 18th century. Italian cuisine is known for its regional diversity, especially between the north and the south of the Italian peninsula",
-    name: "Spaghetti Pasta Carbonara",
+    name: "Spaghetti alla Carbonara",
     ingredients: ["Spaghetti", "Egg Yolks", "Pancetta", "Parmesan cheese", "Salt", "Pepper",],
     quantity: [500, 8, 150, 40, "", "",],
     unitMeasure: ["g", "g", "g", "g", "", "",],
@@ -34,18 +34,18 @@ const italian = [
       "small onion, chopped",
       "shallot, minced",
       "carrot, chopped",
-      " prosciutto or bacon, cubed",
+      "prosciutto or bacon, cubed",
       "minced pork",
       "minced beef",
-      "teaspoon ground nutmeg",
-      "teaspoon ground cinnamon",
+      "ground nutmeg",
+      "ground cinnamon",
       "red wine",
-      " tomatoes",
+      "tomatoes",
       "lasagne sheets",
       "Parmesan cheese",
     ],
     quantity: [2, 1, 1, 1, 100, 300, 300, 1, 1, 1, 600, 300, 200,],
-    unitMeasure: ["", "", "", "", "g", "g", "g", "", "", "ml", "g", "g", "g",],
+    unitMeasure: ["", "", "", "", "g", "g", "g", "tsp", "tsp", "ml", "g", "g", "g",],
     portions: 4,
     directions: [
       "Prepare Bolognesa sauce: In a saucepan add oil, onion, shallots and carrot and prosciutto or bacon. Allow to cook for a few minutes over medium heat so that the onion becomes translucent and the bacon releases some of its fat.",
@@ -64,7 +64,7 @@ const italian = [
     portions: 4,
     directions: [
       "Using an electric mixer in a medium bowl, whip together egg yolks and 1/4 cup/50 grams sugar until very pale yellow and about tripled in volume. A slight ribbon should fall from the beaters (or whisk attachment) when lifted from the bowl. Transfer mixture to a large bowl, wiping out the medium bowl used to whip the yolks and set aside.",
-      "In the medium bowl, whip cream and remaining 1/4 cup/50 grams sugar until it creates soft-medium peaks. Add mascarpone and continue to whip until it creates a soft, spreadable mixture with medium peaks. Gently fold the mascarpone mixture into the sweetened egg yolks until combined.",
+      "In the medium bowl, whip cream and remaining 1/4 cup and 50 grams sugar until it creates soft-medium peaks. Add mascarpone and continue to whip until it creates a soft, spreadable mixture with medium peaks. Gently fold the mascarpone mixture into the sweetened egg yolks until combined.",
       "Combine espresso and rum in a shallow bowl and set aside.",
       "Using a sifter, dust the bottom of a 2-quart baking dish (an 8x8-inch dish, or a 9-inch round cake pan would also work here) with 1 tablespoon cocoa powder.",
       "Working one at a time, quickly dip each ladyfinger into the espresso mixture -- they are quite porous and will fall apart if left in the liquid too long -- and place them rounded side up at the bottom of the baking dish. Repeat, using half the ladyfingers, until you’ve got an even layer, breaking the ladyfingers in half as needed to fill in any obvious gaps (a little space in between is O.K.). Spread half the mascarpone mixture onto the ladyfingers in one even layer. Repeat with remaining espresso-dipped ladyfingers and mascarpone mixture", "Dust top layer with remaining tablespoon of cocoa powder. Top with shaved or finely grated chocolate, if desired.", "Cover with plastic wrap and let chill in the refrigerator for at least 4 hours (if you can wait 24 hours, all the better) before slicing or scooping to serve.",
@@ -73,7 +73,6 @@ const italian = [
       "img/tiramisu-italian.jpg",
   },
 ];
-
 const greek = [
   {
     cuisine: "Greek",
@@ -82,16 +81,16 @@ const greek = [
     ingredients: [
       "round barley rusk",
       "tomato",
-      "teaspoon(s) vinegar, or white wine",
+      "vinegar, or white wine",
       "granulated sugar",
-      "pinch salt and pepper",
-      "tbsp basil",
+      "salt and pepper",
+      "basil",
       "thyme, fresh",
       "spring onion",
       "feta cheese",
     ],
     quantity: [1, 1, 1, 1, 1, 1, "", 0.5, 100],
-    unitMeasure: ["", "", "", "", "", "", "", "", "g"],
+    unitMeasure: ["", "", "tsp", "", "pinch", "tbsp", "", "", "g"],
     portions: 2,
     directions: [
       "Place the 2 pieces of the dako onto 2 plates, outer side or crust facing down.",
@@ -260,16 +259,16 @@ const german = [
     intro: "Italian cuisine is bla bla bla...",
     name: "Beef Rouladen",
     ingredients: [
-      "slices top round",
-      "slices lean bacon",
+      "top round",
+      "lean bacon",
       "onion",
       "garlic",
-      "tbsp butter",
+      "butter",
       "mustard, salt, pepper, cornstratch",
-      "cups water",
+      "water",
     ],
     quantity: [6, 3, 1, 3, 2, "", 1],
-    unitMeasure: ["", "", "", "", "", "", ""],
+    unitMeasure: ["slices", "slices", "", "", "tbsp", "", "cups"],
     portions: 4,
     directions: [
       "Season beef slices with salt and freshly ground pepper. Thinly spread mustard on top of each slice.",
@@ -290,7 +289,7 @@ const german = [
     ingredients: [
       "pickled herring",
       "potatoes",
-      "tbsp butter",
+      "butter",
       "bunches radish",
       "pickled cucumbers",
       "bunches chives",
@@ -301,7 +300,7 @@ const german = [
       "salt and pepper",
     ],
     quantity: [8, 500, 3, 1, 3, 0.5, 0.5, 1, 150, 100, ""],
-    unitMeasure: ["", "g", "", "", "", "", "", "", "g", "g", ""],
+    unitMeasure: ["", "g", "tbsp", "", "", "", "", "", "g", "g", ""],
     portions: 4,
     directions: [
       "For the herring: Peel potatoes, rinse and cook in boiling salted water for 25 minutes. Drain well.",
@@ -322,7 +321,7 @@ const german = [
       "eggs",
     ],
     quantity: [1, 1, 4, "1.5", "", 7],
-    unitMeasure: ["lb", "", "", "lb", "", ""],
+    unitMeasure: ["lb", "", "tbsp", "lb", "", ""],
     portions: 4,
     directions: [
       "Cut potatoes into slices.",
@@ -409,7 +408,7 @@ const mexican = [
       "tbsp pickled jalapenos",
       "a few sprigs of fresh coriander",
     ],
-    quantity: [200, 1, "", 250, 4, "4", ""],
+    quantity: [200, 1, "", 250, 4, 4, ""],
     unitMeasure: ["g", "", "", "g", "", "", ""],
     portions: 3,
     directions: [
@@ -457,7 +456,6 @@ const mexico = [
     buttonUrl: "https://www.tacorino.de/",
   },
 ];
-
 const greece = [
   {
     country: "Greece",
@@ -490,7 +488,6 @@ const greece = [
     buttonUrl: "https://aplofoods.com/",
   },
 ];
-
 const germany = [
   {
     country: "Germany",
@@ -523,7 +520,6 @@ const germany = [
     buttonUrl: "http://www.hoppegarten-berlin.de/",
   },
 ];
-
 const italy = [
   {
     country: "Italy",
@@ -556,7 +552,6 @@ const italy = [
     buttonUrl: "https://centro-italia.de/",
   },
 ];
-
 const syria = [
   {
     country: "Syria",
@@ -589,6 +584,9 @@ const syria = [
     buttonUrl: "https://aldimashqi-rayan.business.site/?utm_source=gmb&utm_medium=referral",
   },
 ];
+
+const decimalUnits = ['lb', 'pound'];
+const fractionalUnits = ['tbsp', 'tsp', 'liters', 'cups'];
 
 //navigation logic
 
@@ -732,7 +730,7 @@ countrySection.addEventListener("click", (event) => {
 });
 
 // recipe logic
-// let cuisineSelection = italian;
+
 // setting the main recipe randomly on pageload
 let recipeIndex = parseInt(Math.random() * (cuisineSelection.length - 0) + 0);
 let recipeName = cuisineSelection[recipeIndex].name;
@@ -791,6 +789,40 @@ function UpdateRecipeIndex(recipeName) {
   return cuisineSelection.findIndex((x) => x.name === recipeName);
 }
 
+
+function getCommonDenominator(a, b) {
+  // Since there is a limited precision we need to limit the value.
+  if (b < 0.0000001) return a;
+  // Discard any fractions due to limitations in precision.
+  return gcd(b, Math.floor(a % b));
+};
+
+function displayFractionlNumbers(number) {
+  const roundedQuantity = (Math.round(number / 0.25) * 0.25) === 0 ?
+    0.25 :
+    Math.round(number / 0.25) * 0.25;
+
+  const fraction = roundedQuantity - parseInt(roundedQuantity);
+  const len = fraction.toString().length - 2;
+
+  let denominator = Math.pow(10, len);
+  let numerator = fraction * denominator;
+
+  const divisor = getCommonDenominator(numerator, denominator);
+
+  numerator /= divisor;
+  denominator /= divisor;
+
+  let finalValue = fraction === 0 ?
+    roundedQuantity :
+    roundedQuantity < 1 ?
+      `${Math.floor(numerator)}/${Math.floor(denominator)}`
+      : `${parseInt(roundedQuantity)} ${Math.floor(numerator)}/${Math.floor(denominator)}`;
+
+  console.log(finalValue);
+  return finalValue
+}
+
 // creating strings for recipe ingredient list
 function updateIngredientList(cuisineSelection, recipeIndex, portionSelection) {
   const ingredientListDiv = document.body.querySelector(
@@ -800,7 +832,22 @@ function updateIngredientList(cuisineSelection, recipeIndex, portionSelection) {
   ingredientListDiv.innerHTML = "";
   for (let i = 0; i < cuisineSelection[recipeIndex].ingredients.length; i++) {
     let updatedQuantity;
+
     // excluding quantity update for non-numeric quantity i.e. black pepper
+    if (typeof cuisineSelection[recipeIndex].quantity[i] != "number") {
+      updatedQuantity = cuisineSelection[recipeIndex].quantity[i];
+      // check if the quantity needs to be displayed in a fractional way
+    } else if (fractionalUnits.includes(cuisineSelection[recipeIndex].unitMeasure)) {
+      updatedQuantity = displayFractionlNumbers(cuisineSelection[index].quantity * portionSelection /
+        cuisineSelection[recipeIndex].portions);
+      // setting minimun quantity to 1 so the Math.rond will never output 0
+    } else if (Math.round(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions) === 0) {
+      updatedQuantity = Math.ceil(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions);
+    } else {
+      updatedQuantity = Math.round(cuisineSelection[recipeIndex].quantity[i] * portionSelection / cuisineSelection[recipeIndex].portions);
+    }
+
+    /* // excluding quantity update for non-numeric quantity i.e. black pepper
     if (typeof cuisineSelection[recipeIndex].quantity[i] != "number") {
       updatedQuantity = cuisineSelection[recipeIndex].quantity[i];
       // setting minimun quantity to 1 so the parseInt rounding will never output 0
@@ -811,15 +858,12 @@ function updateIngredientList(cuisineSelection, recipeIndex, portionSelection) {
       ) === 0 && cuisineSelection[recipeIndex].unitMeasure[i] === ''
     ) {
       updatedQuantity = 1;
-    } else if (cuisineSelection[recipeIndex].unitMeasure[i] === 'tsp' || cuisineSelection[recipeIndex].unitMeasure[i] === 'tbsp' || cuisineSelection[recipeIndex].unitMeasure[i] === 'cups' || cuisineSelection[recipeIndex].unitMeasure[i] === 'cup') {
-      updatedQuantity = ((cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-        cuisineSelection[recipeIndex].portions).toFixed(2)
-    } else {
+    }else {
       updatedQuantity = parseInt(
         (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
         cuisineSelection[recipeIndex].portions
       );
-    }
+    } */
 
     const quantityDiv = document.createElement("div");
     quantityDiv.classList.add("quantity-div");
