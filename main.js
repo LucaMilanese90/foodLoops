@@ -1051,7 +1051,7 @@ let mailBody;
 
 // creating strings for mail ingredient list
 function mailIngredientList(cuisineSelection, recipeIndex, portionSelection) {
-  let mailIngredient = "Ingredient list: ";
+  let mailIngredient = "Ingredient list:<br><br>";
   for (let i = 0; i < cuisineSelection[recipeIndex].ingredients.length; i++) {
     let updatedQuantity;
 
@@ -1072,20 +1072,20 @@ function mailIngredientList(cuisineSelection, recipeIndex, portionSelection) {
     let updatedIngredient = cuisineSelection[recipeIndex].ingredients[i];
 
     if (updatedQuantity === "") {
-      mailIngredient += `${updatedIngredient} - `;
+      mailIngredient += ` - ${updatedIngredient}<br>`;
     } else if (updatedUnitMeasure == "") {
-      mailIngredient += `${updatedQuantity} ${updatedIngredient} - `;
+      mailIngredient += ` - ${updatedQuantity} ${updatedIngredient}<br>`;
     } else {
-      mailIngredient += `${updatedQuantity} ${updatedUnitMeasure} of ${updatedIngredient} - `;
+      mailIngredient += ` - ${updatedQuantity} ${updatedUnitMeasure} of ${updatedIngredient}<br>`;
     }
   }
-  return mailIngredient.slice(0, -3);
+  return mailIngredient;
 }
 
 function mailCookDirections(cuisineSelection, recipeIndex) {
-  let mailSteps = "------ Recipe steps recap: ";
+  let mailSteps = "<br>Recipe steps recap:<br><br>";
   for (let i = 0; i < cuisineSelection[recipeIndex].directions.length; i++) {
-    mailSteps += `(${i + 1}) ${cuisineSelection[recipeIndex].directions[i]}. `;
+    mailSteps += `${i + 1}. ${cuisineSelection[recipeIndex].directions[i]}<br>`;
   }
   return mailSteps;
 }
@@ -1094,11 +1094,11 @@ const emailButton = document.body.querySelector("#email");
 emailButton.addEventListener("click", () => {
   mailAddress = document.querySelector(".email-address").value;
   mailSubject = recipeName.charAt(0).toUpperCase() + recipeName.slice(1);
-  mailBody = `${mailIngredientList(
+  mailBody = `Ingredients for ${portionSelection} portions.<br><br>${mailIngredientList(
     cuisineSelection,
     recipeIndex,
     portionSelection
-  )}. ${mailCookDirections(cuisineSelection, recipeIndex)}`;
+  )}<br>${mailCookDirections(cuisineSelection, recipeIndex)}`;
   sendEmail();
 });
 
@@ -1142,6 +1142,17 @@ const Email = {
   },
 };
 
+
+function emailButtonConfirmation() {
+  document.querySelector(".email-address").value = '';
+  emailButton.style.backgroundColor = '#54c95e';
+  emailButton.innerHTML = 'Sent successfully';
+  setTimeout(() => {
+    emailButton.style.backgroundColor = '#7E9FD4';
+    emailButton.innerHTML = 'Email this recipe';
+  }, 2500);
+}
+
 function sendEmail() {
   Email.send({
     Host: "smtp.gmail.com",
@@ -1151,8 +1162,9 @@ function sendEmail() {
     From: "wild.foodloops@gmail.com",
     Subject: mailSubject,
     Body: mailBody,
-  }).then(alert("mail sent successfully"));
+  }).then(emailButtonConfirmation())
 }
+
 
 
 // restaurant logic
