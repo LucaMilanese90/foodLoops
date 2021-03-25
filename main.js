@@ -340,7 +340,7 @@ const mexican = [
   {
     cuisine: "Mexican",
     intro: "Mexican cuisine is a complex and ancient cuisine, with techniques and skills developed over thousands of years of history. It is created mostly with ingredients native to Mexico, as well as those brought over by the Spanish conquistadors, with some new influences since then. In addition to staples, such as corn and chile peppers, native ingredients include tomatoes, squashes, avocados, cocoa and vanilla, as well as ingredients not generally used in other cuisines, such as edible flowers, vegetables like huauzontle and papaloquelite, or small criollo avocados, whose skin is edible. Chocolate originated in Mexico and was prized by the Aztecs. It remains an important ingredient in Mexican cookery.",
-    name: "Lemon sole with chipotle & chilli recado",
+    name: "Lemon sole with chipotle and chilli recado",
     ingredients: [
       "lemon sole",
       "lime",
