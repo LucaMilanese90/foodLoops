@@ -25,7 +25,6 @@ h1 {
 h2 {
     padding: 15px;
     font-size: 20px;
-    margin-top: 15px;
 }
 
 h3 {
@@ -39,6 +38,7 @@ p {
     font-size: 16px;
     max-width: 600px;
     margin-top: 15px;
+    padding: 10px;
 }
 
 button {
@@ -51,6 +51,7 @@ button {
 	font-size:16px;
 	padding:8px 15px;
 	text-decoration:none;
+    margin-bottom: 10px;
 }
 button:hover {
 	filter: brightness(0.9);
@@ -64,6 +65,10 @@ img {
     border-radius: 2px;
 }
 
+.white-space {
+    height: 60px;
+    background-color: white;
+}
 
 
 /* HEADER and entryquestion*/
@@ -82,17 +87,13 @@ img {
 
 #in, #out {
     height: 50%;
-    padding-top: 100px;
     color: #E0705F;
     font-size: 2em;
     cursor: pointer;
     background-size: cover;
-    /* filter: grayscale(0.8); */
-}
-
-#in:hover, #out:hover {
-    /* filter: none; */
-    /* transition: filter 0.5s ease-in-out; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #in {
@@ -107,9 +108,7 @@ img {
     font-size: 35px;
     padding: 5px;
     background-color: #CCCCCCB3;
-    position: absolute;
     border-radius: 3px;
-    right: 25%;
 }
 
 #out .in-out-text {
@@ -120,10 +119,6 @@ img {
 #country-selection {
     padding-top: 60px;
     height: 100vh;
-    /* background: #E0705F;
-    background: -moz-linear-gradient(top, #E0705F 0%, #FFD078 75%, #E0705F 100%);
-    background: -webkit-linear-gradient(top, #E0705F 0%, #FFD078 75%, #E0705F 100%);
-    background: linear-gradient(to bottom, #E0705F 0%, #FFD078 75%, #E0705F 100%); */
     background-color: #F4F0E9;
 }
 
@@ -133,20 +128,11 @@ img {
     cursor: pointer;
     font-size: 30px;
     border-bottom: 1px solid #12182129; 
+    background-color: #F4F0E9;
 }
 
-/* .country-card::before{
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 1px;
-    background: black;
-    top: 100%;
-    left: 50%;
-} */
-
 .country-card:hover{
-    filter:brightness(0.8);    
+    filter:brightness(0.9);    
 }
 
 .country-card a {
@@ -224,6 +210,7 @@ nav {
     padding-top: 60px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .country-intro {
@@ -233,14 +220,18 @@ nav {
 }
 
 #recipe-main {
-    padding-top: 60px;
+    padding: 10px;
+    max-width: 600px;
+    background-color: #F4F0E9;
+    border-radius: 3px;
+    margin-bottom: 20px;
 }
 
 /*Picture sizes*/
 
 .main-image, #img-restaurant {
-    width: 600px;
-    height: 600px;
+    width: 580px;
+    height: 580px;
     object-fit: cover;
 }
 
@@ -252,14 +243,19 @@ nav {
 
 @media (max-width: 599px) {
     .main-image, #img-restaurant {
-        width: 100vw;
-        height: 100vw;
+        width: calc(100vw - 20px);
+        height: calc(100vw - 20px);
     }
   }
   
 
 #portions {
     padding: 15px;
+}
+
+#portions label {
+    margin-right: 10px;
+    font-weight: bolder;
 }
 
 .ingredient-list {
@@ -351,16 +347,22 @@ input[type=number] {
     justify-content: space-between;
 }
 
-
 @media (max-width: 599px) {
     .alternatives {
         width: 100vw;
+        justify-content: center;
+    }
+    .alternative-recipes {
+        margin: 10px;
     }
   }
-  
 
-
-
+.alternative-recipes {
+    width: 220px;
+    padding: 10px;
+    background-color: #F4F0E9;
+    border-radius: 3px;
+}
 .alternative-recipes {
     cursor: pointer;
 }
@@ -372,12 +374,33 @@ input[type=number] {
 }
 
 #restaurant-main {
-    padding-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
+    max-width: 600px;
+    background-color: #F4F0E9;
+    border-radius: 3px;
+    margin-bottom: 20px;
 }
 
 #map {
     margin-top: 15px;
+}
+
+@media (max-width: 599px) {
+    .alternative-restaurants {
+        margin: 10px;
+    }
+  }
+
+.alternative-restaurants {
+    width: 220px;
+    padding: 10px;
+    background-color: #F4F0E9;
+    border-radius: 3px;
+}
+
+.alternative-restaurants {
+    cursor: pointer;
 }
