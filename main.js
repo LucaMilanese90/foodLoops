@@ -440,7 +440,7 @@ const mexico = [
   {
     country: "Mexico",
     name: "Zapata",
-    about: "Lorem50",
+    about: "With dishes and delicious delicacies from the Latin American cuisine restaurant Zapata in Berlin cooks its guests. In addition, this restaurant also offers Mexican dishes. The restaurant is always open except on Sundays.",
     imageUrl: "img/Zapata.jpg",
     mapUrl:
       "https://maps.google.com/maps?q=zapata%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
@@ -450,7 +450,7 @@ const mexico = [
   {
     country: "Mexico",
     name: "Tacoriño",
-    about: "Lorem50",
+    about: "LOVE FOR TACOS! Experience a new taste sensation. We use only organic corn flour directly from Mexico. Our tortillas are naturally gluten and lactose free. They are freshly prepared in front of your eyes. We've made it our mission to create a new restaurant experience, with lots of good humor and modern Latin flair.",
     imageUrl: "img/Tacorino.jpg",
     mapUrl:
       "https://maps.google.com/maps?q=tacori%C3%B1o%20restaurant%20berlin&t=&z=13&ie=UTF8&iwloc=&output=embed",
