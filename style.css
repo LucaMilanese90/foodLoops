@@ -203,7 +203,7 @@ nav {
 
 /*Picture sizes*/
 
-#recipe-main img, #img-restaurant {
+.main-image, #img-restaurant {
     width: 600px;
     height: 600px;
     object-fit: cover;
@@ -216,8 +216,8 @@ nav {
 }
 
 @media (max-width: 599px) {
-    #recipe-main img, #img-restaurant {
-        width: 100%;
+    .main-image, #img-restaurant {
+        width: 100vw;
         height: 100vw;
     }
   }
@@ -319,7 +319,7 @@ input[type=number] {
 
 @media (max-width: 599px) {
     .alternatives {
-        width: 100%;
+        width: 100vw
     }
   }
   
