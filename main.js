@@ -808,11 +808,7 @@ function updateIngredientList(cuisineSelection, recipeIndex, portionSelection) {
       parseInt(
         (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
         cuisineSelection[recipeIndex].portions
-<<<<<<< HEAD
-      ) === 0
-=======
       ) === 0 && cuisineSelection[recipeIndex].unitMeasure[i] === ''
->>>>>>> 92a29383a609f88b7b0cf642c3a2decee29267f8
     ) {
       updatedQuantity = 1;
     } else if (cuisineSelection[recipeIndex].unitMeasure[i] === 'tsp' || cuisineSelection[recipeIndex].unitMeasure[i] === 'tbsp' || cuisineSelection[recipeIndex].unitMeasure[i] === 'cups' || cuisineSelection[recipeIndex].unitMeasure[i] === 'cup') {
