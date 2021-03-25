@@ -82,13 +82,12 @@ img {
 
 #in, #out {
     height: 50%;
-    padding-top: 50px;
+    padding-top: 100px;
     color: #E0705F;
     font-size: 2em;
     cursor: pointer;
     background-size: cover;
     /* filter: grayscale(0.8); */
-    text-shadow: 0px 0px 14px #000000;
 }
 
 #in:hover, #out:hover {
@@ -97,28 +96,59 @@ img {
 }
 
 #in {
-    background-image: url(./img/cooking.jpg);
+    background-image: url(./img/cook-athome.jpg);
 }
 
 #out{
-    background-image: url(./img/dine-out.jpg);
+    background-image: url(./img/restaurant-aliki.jpg);
+}
+
+.in-out-text {
+    font-size: 35px;
+    padding: 5px;
+    background-color: #CCCCCCB3;
+    position: absolute;
+    border-radius: 3px;
+    right: 25%;
+}
+
+#out .in-out-text {
+    color: #6d8411;
+    right: 30%;
 }
 
 #country-selection {
     padding-top: 60px;
     height: 100vh;
-    background: #E0705F;
+    /* background: #E0705F;
     background: -moz-linear-gradient(top, #E0705F 0%, #FFD078 75%, #E0705F 100%);
     background: -webkit-linear-gradient(top, #E0705F 0%, #FFD078 75%, #E0705F 100%);
-    background: linear-gradient(to bottom, #E0705F 0%, #FFD078 75%, #E0705F 100%);
+    background: linear-gradient(to bottom, #E0705F 0%, #FFD078 75%, #E0705F 100%); */
+    background-color: #F4F0E9;
 }
 
 .country-card {
     height: 20%;
     padding-top: 20px;
     cursor: pointer;
-    
+    font-size: 30px;
+    border-bottom: 1px solid #12182129; 
 }
+
+/* .country-card::before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    background: black;
+    top: 100%;
+    left: 50%;
+} */
+
+.country-card:hover{
+    filter:brightness(0.8);    
+}
+
 .country-card a {
     text-decoration: none;
     color: #121821;
@@ -131,7 +161,7 @@ img {
 header {
     position: fixed;
     width: 100%;
-    background-color: #FFD078;
+    background-color: #F4F0E9;
     opacity: 80%;
 }
 
@@ -139,6 +169,7 @@ nav {
     height: 60px;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #ffd07842;
 }
 
 .logo {
