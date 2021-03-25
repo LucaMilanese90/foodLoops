@@ -623,7 +623,6 @@ navLinks.addEventListener("click", function (event) {
     window.location.href = "./index.html";
   } else {
     inOrOut = event.target.className;
-    console.log(inOrOut);
     mainRecipes.classList.add("not-visible");
     mainRestaurant.classList.add("not-visible");
     mainHome.classList.remove("not-visible");
@@ -663,16 +662,21 @@ const countrySection = document.getElementById("country-selection");
 const countries = document.querySelectorAll(".country-card > a");
 const inOut = document.getElementById("in-out-selection");
 
-function sendOption(a, b) {
-  console.log(a, b);
+function sendOption(a) {
   mainHome.classList.add("not-visible");
   a === "in"
     ? mainRecipes.classList.remove("not-visible")
     : mainRestaurant.classList.remove("not-visible");
 }
 
+// looking for click on the in - out div or on the corresponding labels
 inOut.addEventListener("click", (event) => {
-  inOrOut = event.target.className;
+  event.target.innerHTML === 'Cook at home'
+    ? inOrOut = 'in'
+    : event.target.innerHTML === 'Dine out'
+      ? inOrOut = 'out'
+      : inOrOut = event.target.className;
+
   countrySection.scrollIntoView({ behavior: "smooth" });
 });
 
@@ -682,7 +686,6 @@ let restaurantSelection = mexico;
 function getRightArray(country) {
   switch (country) {
     case "italian":
-      console.log(country);
       cuisineSelection = italian;
       restaurantSelection = italy;
       break;
@@ -707,7 +710,7 @@ function getRightArray(country) {
 countrySection.addEventListener("click", (event) => {
   country = event.target.className;
   countryName = country.split(" ").pop();
-  sendOption(inOrOut, countryName);
+  sendOption(inOrOut);
   getRightArray(countryName);
   updatePageTitleAndIntro(cuisineSelection);
   updateMainImageAndTitle(recipeIndex);
@@ -822,7 +825,6 @@ function displayFractionlNumbers(number) {
       `${Math.floor(numerator)}/${Math.floor(denominator)}`
       : `${parseInt(roundedQuantity)} ${Math.floor(numerator)}/${Math.floor(denominator)}`;
 
-  console.log(finalValue);
   return finalValue
 }
 
@@ -989,10 +991,10 @@ alternativeRecipes.forEach((item) => {
     updateIngredientList(cuisineSelection, recipeIndex, portionSelection);
     updateCookDirections(cuisineSelection, recipeIndex);
     updateDefaultButtonQuantity();
-    // scroll the window to the beginning of recipe-main div
-    const ingredientListDiv = document.body.querySelector(".white-space-recipe");
+    // scroll the window to the beginning of white-space-recipe div
     window.scrollTo({
-      top: ingredientListDiv.offsetTop,
+      // -60 is the height of the div, not sure why it's not taking the top as starting point
+      top: (document.body.querySelector(".white-space-recipe").offsetTop - 60),
       left: 0,
       behavior: "smooth",
     });
@@ -1225,10 +1227,10 @@ alternativeRestaurants.forEach((item) => {
     // running function to update the index of the recipe in recipes array
     restaurantsIndex = UpdaterestaurantsIndex(restaurantsName);
     updateRestaurants(restaurantSelection, restaurantsIndex);
-    // scroll the window to the beginning of recipe-main div
-    const restaurantDiv = document.body.querySelector(".white-space-restaurant");
+    // scroll the window to the beginning of white-space-restaurant div
     window.scrollTo({
-      top: restaurantDiv.offsetTop,
+      // -60 is the height of the div, not sure why it's not taking the top as starting point
+      top: (document.body.querySelector(".white-space-restaurant").offsetTop - 60),
       left: 0,
       behavior: "smooth",
     });
