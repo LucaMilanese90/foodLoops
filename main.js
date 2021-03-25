@@ -151,56 +151,96 @@ const greek = [
 ];
 const syrian = [
   {
-    cuisine: "italian",
+    cuisine: "syrian",
     intro: "Italian cuisine is bla bla bla...",
-    name: "risotto",
-    ingredients: ["eggs", "pecorino cheese", "pasta", "pepper", "guanciale"],
-    quantity: [2, 35, 200, "", 80],
-    unitMeasure: ["", "g", "g", "", "g"],
+    name: "Grilled Aubergine With Beef Keema and Pine Nuts",
+    ingredients: ['vegetable oil',
+      'sticks of cinnamon',
+      'cardamom pods', 'cloves',
+      'medium onions, chopped',
+      'ginger, chopped',
+      'garlic, chopped',
+      'turmeric powder',
+      'red chilli powder',
+      'cumin powder',
+      'cumin powder',
+      'medium tomatoes, chopped',
+      'garam masala powder',
+      'beef, minced',
+      'big aubergines',
+      'crushed black pepper',
+      'pine nuts',
+      'bunch spring onions',
+      'tomato',
+      'green chillies, chopped',
+      'tsp coriander, chopped'],
+    quantity: [4, 3, 4, 5, 2, 1, 1, 0.5, 0.5, 1, 2, 3, 0.5, 800, 2, 1, 200, 1, 1, 2, 2],
+    unitMeasure: ['tbsp', '', '', '', '', 'tbps', 'tbsp', 'tsp', 'tsp', 'tsp', 'tbsp', '', '', 'tsp', 'g', '', 'tbsp', 'tbsp', 'g', '', '', '', 'tsp'],
     portions: 4,
     directions: [
-      "Do something",
-      "Now do something else",
-      "Almost there, stirr it once more",
-      "Cross your fingers",
-      "Ready to go!",
+      "Heat the vegetable oil in a thick-bottomed saucepan. Add the cinnamon, cardamom and cloves, sauté for half a minute, then add the chopped onions and sauté over a medium heat, stirring occasionally, until golden brown.",
+      "Add the chopped ginger and garlic, then stir well for a couple of minutes and add the turmeric, chilli, cumin and coriander powder and sauté for a further five minutes.",
+      "Add the chopped tomato and garam masala, then stir and allow to simmer for 10-15 minutes, or until the oil separates from the masala.",
+      "Add the mince and cook over a high heat for five minutes, stirring constantly. Lower the heat to a gentle simmer and leave covered for about 10 minutes.",
+      "Remove the lid, turn up the heat and sauté for a further 10 minutes, stirring constantly until almost dry.",
+      'Halve, season with pepper and then grill the aubergines for 4 minutes on each side.',
+      'Serve the beef mince on top of the grilled aubergine, then top with some yoghurt and a mix of all the chopped ingredients in the pine nut kachumber salad.'
     ],
     picture:
       "https://images.unsplash.com/photo-1595908129746-57ca1a63dd4d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
   },
   {
-    name: "carbonara",
+    name: "Harak osbao – lentils and pasta with tamarind, sumac and pomegranate",
     ingredients: [
-      "eggs",
-      "pecorino cheese",
-      "pasta",
-      "guanciale",
-      "black pepper",
+      "tamarind, soaked in 200ml boiling water",
+      "fettuccini, broken up roughly",
+      "olive oil",
+      "red onions, thinly sliced",
+      "brown lentils",
+      'chicken stock',
+      'pomegranate molasses',
+      'garlic cloves, crushed',
+      'coriander, roughly chopped',
+      'parsley, roughly chopped',
+      'pomegranate seeds',
+      'sumac',
+      'lemons, cut into wedges',
+      'flaky sea salt',
+      'black pepper'
     ],
-    quantity: [2, 35, 200, 80, ""],
-    unitMeasure: ["", "g", "g", "g", ""],
-    portions: 1,
+    quantity: [20, 125, 30, 175, 175, 0.75, 1000, 3, 15, 10, 45, 1, 1, '', ''],
+    unitMeasure: ['g', 'g', 'ml', 'g', 'g', 'ml', 'tbsp', '', 'g', 'g', 'g', 'tsp', '', '', ''],
+    portions: 4,
     directions: [
-      "If you see some green stuff between your ingredients you are already doing it wrong, start again",
-      "I'm serious, NO green stuff",
-      "Make sure you are not making scrumbled eggs",
-      "Enjoy",
+      "Mix the tamarind with the water well to separate the pips. Strain the liquid into a small bowl, discarding the pips, and set aside.",
+      "Place a large saucepan on a medium-high heat and once hot, add the broken-up fettucini. Toast for 1-2 minutes until the pasta starts to brown, then remove from the pan and set aside.",
+      "Pour 2 tablespoons of oil into the pan and return to a medium-high heat. Add the onion and fry for 8 minutes, stirring frequently until golden and soft. Remove from the pan and set aside.",
+      "Add the chicken stock to the pan and place on a high heat. Once boiling, add the lentils, reduce the heat to medium and cook for 20 minutes or until soft.",
+      'Add the toasted fettucine, tamarind water, 150ml water, pomegranate molasses, 4 teaspoons of salt and lots of pepper.',
+      'Continue to cook for 8-9 minutes until the pasta is soft and almost all of the liquid has been absorbed and set aside for 10 minutes. The liquid will continue to be absorbed, but the lentils and pasta should remain moist.',
+      'Place a small saucepan on a medium-high heat with 2 tablespoons of oil. Add the garlic and fry for 1-2 minutes, until just golden brown. Remove from the heat and stir in the coriander.',
+      'Spoon the lentils and pasta into a large, shallow serving bowl. Top with the garlic and coriander, parsley, pomegranate seeds and sumac, and serve with the lemon wedges.'
     ],
     picture:
       "https://images.unsplash.com/photo-1579631542720-3a87824fff86?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
   },
   {
-    name: "lasagne",
-    ingredients: ["eggs", "pecorino cheese", "pasta", "pepper", "guanciale"],
-    quantity: [2, 35, 200, "", 80],
-    unitMeasure: ["", "g", "g", "", "g"],
+    name: "Safiha (Mini Meat Pies)",
+    ingredients: ["packet puff pastry sheets, thawed",
+      "ground lamp or beef", "small onion, finely chopped",
+      "tahini", "pomegranate molasses", 'pine nuts (optional)',
+      'Ground black pepper to taste', 'salt'],
+    quantity: [1, 1, 1, 3, 3, 0.25, '', 0.5],
+    unitMeasure: ['', 'pound', '', 'tbsp', 'tbsp', 'cup', '', 'tsp'],
     portions: 3,
     directions: [
-      "Do something",
-      "Now do something else",
-      "Almost there, stirr it once more",
-      "Cross your fingers",
-      "Ready to go!",
+      "Preheat oven to 400F.",
+      "Saute the onion until translucent then add the meat and brown. Add salt, pepper, tahini, and pomegranate molasses and cook for two minutes.",
+      "Meanwhile spread the pastry sheet until it is 9″*12″ and cut into 12 squares.",
+      "Put the squares in a 12 muffin pan (there should be 24 pieces of dough that you can make in 2 patches since puff pastry comes with two sheets).",
+      "Distribute meat mixture over the dough, and garnish each with 2-3 pine nuts.",
+      "Bake in the oven for 10-12 minutes, until edges are pink",
+      "Bake and serve. Safiha is best when served immediately."
     ],
     picture:
       "https://images.unsplash.com/photo-1614961909013-1e2212a2ca87?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
@@ -667,17 +707,17 @@ countrySection.addEventListener("click", (event) => {
   updateCookDirections(cuisineSelection, recipeIndex);
   updateSecondaryImageAndTitle(recipeIndex);
   updateRestaurants(restaurantSelection, restaurantsIndex);
-  if(inOrOut === 'in') {
+  if (inOrOut === 'in') {
     window.scrollTo({
-        top: mainRecipes.offsetTop,
-        left: 0,
-        // behavior: "smooth",
-      });
+      top: mainRecipes.offsetTop,
+      left: 0,
+      // behavior: "smooth",
+    });
   } else {
-      window.scrollTo({
+    window.scrollTo({
       top: mainRestaurant.offsetTop,
       left: 0,
-    //   behavior: "smooth",
+      //   behavior: "smooth",
     });
   }
 });
@@ -758,14 +798,17 @@ function updateIngredientList(cuisineSelection, recipeIndex, portionSelection) {
     } else if (
       parseInt(
         (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-          cuisineSelection[recipeIndex].portions
-      ) === 0
+        cuisineSelection[recipeIndex].portions
+      ) === 0 && cuisineSelection[recipeIndex].unitMeasure[i] === ''
     ) {
       updatedQuantity = 1;
+    } else if (cuisineSelection[recipeIndex].unitMeasure[i] === 'tsp' || cuisineSelection[recipeIndex].unitMeasure[i] === 'tbsp' || cuisineSelection[recipeIndex].unitMeasure[i] === 'cups' || cuisineSelection[recipeIndex].unitMeasure[i] === 'cup') {
+      updatedQuantity = ((cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
+        cuisineSelection[recipeIndex].portions).toFixed(2)
     } else {
       updatedQuantity = parseInt(
         (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-          cuisineSelection[recipeIndex].portions
+        cuisineSelection[recipeIndex].portions
       );
     }
 
@@ -808,14 +851,14 @@ function updateIngredientListEditable(
     } else if (
       parseInt(
         (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-          cuisineSelection[recipeIndex].portions
+        cuisineSelection[recipeIndex].portions
       ) === 0
     ) {
       updatedQuantity = 1;
     } else {
       updatedQuantity = parseInt(
         (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-          cuisineSelection[recipeIndex].portions
+        cuisineSelection[recipeIndex].portions
       );
     }
 
@@ -985,14 +1028,14 @@ function mailIngredientList(cuisineSelection, recipeIndex, portionSelection) {
     } else if (
       parseInt(
         (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-          cuisineSelection[recipeIndex].portions
+        cuisineSelection[recipeIndex].portions
       ) === 0
     ) {
       updatedQuantity = 1;
     } else {
       updatedQuantity = parseInt(
         (cuisineSelection[recipeIndex].quantity[i] * portionSelection) /
-          cuisineSelection[recipeIndex].portions
+        cuisineSelection[recipeIndex].portions
       );
     }
 
@@ -1030,7 +1073,7 @@ emailButton.addEventListener("click", () => {
   sendEmail();
 });
 
-let Email = {
+const Email = {
   send: function (a) {
     return new Promise(function (n, e) {
       (a.nocache = Math.floor(1e6 * Math.random() + 1)), (a.Action = "Send");
@@ -1063,8 +1106,8 @@ let Email = {
       "withCredentials" in t
         ? t.open(e, n, !0)
         : "undefined" != typeof XDomainRequest
-        ? (t = new XDomainRequest()).open(e, n)
-        : (t = null),
+          ? (t = new XDomainRequest()).open(e, n)
+          : (t = null),
       t
     );
   },
@@ -1082,13 +1125,8 @@ function sendEmail() {
   }).then(alert("mail sent successfully"));
 }
 
-/* updatePageTitleAndIntro(cuisineSelection)
-updateMainImageAndTitle(recipeIndex);
-updateIngredientList(cuisineSelection, recipeIndex, portionSelection);
-updateCookDirections(cuisineSelection, recipeIndex);
-updateSecondaryImageAndTitle(recipeIndex); */
 
-// setting the main recipe randomly on pageload
+// restaurant logic
 let restaurantsIndex = parseInt(
   Math.random() * (restaurantSelection.length - 0) + 0
 );
