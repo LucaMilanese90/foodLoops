@@ -1198,8 +1198,9 @@ function updateRestaurants(restaurantSelection, restaurantsIndex) {
     restaurantSelection[restaurantsIndex].about;
   document.querySelector("#gmap_canvas1").src =
     restaurantSelection[restaurantsIndex].mapUrl;
-  document.querySelector("#button-link").href =
-    restaurantSelection[restaurantsIndex].buttonUrl;
+  const websiteButton = document.querySelector("#button-link");
+  const websiteLink = websiteButton.querySelector('a');
+  websiteLink.href = restaurantSelection[restaurantsIndex].buttonUrl;
 
   // Update Secondary
   const secondaryImages = document.querySelectorAll(".small-photo");
