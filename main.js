@@ -1003,7 +1003,7 @@ alternativeRecipes.forEach((item) => {
     // scroll the window to the beginning of white-space-recipe div
     window.scrollTo({
       // -60 is the height of the div, not sure why it's not taking the top as starting point
-      top: (document.body.querySelector(".white-space-recipe").offsetTop - 60),
+      top: (document.body.querySelector(".white-space-recipe").offsetTop - 10),
       left: 0,
       behavior: "smooth",
     });
@@ -1237,8 +1237,8 @@ alternativeRestaurants.forEach((item) => {
     updateRestaurants(restaurantSelection, restaurantsIndex);
     // scroll the window to the beginning of white-space-restaurant div
     window.scrollTo({
-      // -60 is the height of the div, not sure why it's not taking the top as starting point
-      top: (document.body.querySelector(".white-space-restaurant").offsetTop - 60),
+      // -60 is the height of the div, not sure why it's not taking the top as starting point (Hanna:"for me it does")
+      top: (document.body.querySelector(".white-space-restaurant").offsetTop - 10),
       left: 0,
       behavior: "smooth",
     });
