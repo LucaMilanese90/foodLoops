@@ -310,6 +310,7 @@ input[type=number] {
 
 .selected-button {
     background-color: #E0705F;
+    border-color: #E0705F;
     color: #FFD078;
 }
 
@@ -323,6 +324,10 @@ input[type=number] {
     border-style: solid;
     border-radius: 2px;
     box-shadow: 0px 0px 1px rgba(66,66,66,.75);
+}
+
+.email-address input {
+    margin-bottom: 10px;
 }
 
 .done, .edit, #email {
@@ -392,6 +397,15 @@ input[type=number] {
 #map iframe {
     max-width: 600px;
     width: 100vw;
+}
+
+#button-link {
+    margin: 10px;
+}
+
+#button-link a {
+    text-decoration: none;
+    color: #E0705F;
 }
 
 @media (max-width: 599px) {
