@@ -36,9 +36,10 @@ h3 {
 
 p {
     font-size: 16px;
-    max-width: 600px;
     margin-top: 15px;
     padding: 10px;
+    max-width: 600px;
+    width: 100vw;
 }
 
 button {
@@ -386,6 +387,11 @@ input[type=number] {
 
 #map {
     margin-top: 15px;
+}
+
+#map iframe {
+    max-width: 600px;
+    width: 100vw;
 }
 
 @media (max-width: 599px) {
