@@ -1102,7 +1102,7 @@ function mailCookDirections(cuisineSelection, recipeIndex) {
 const emailButton = document.body.querySelector("#email");
 emailButton.addEventListener("click", () => {
   mailAddress = document.querySelector(".email-address").value;
-  mailSubject = recipeName.charAt(0).toUpperCase() + recipeName.slice(1);
+  mailSubject = cuisineSelection[recipeIndex].name;
   mailBody = `Ingredients for ${portionSelection} portions.<br><br>${mailIngredientList(
     cuisineSelection,
     recipeIndex,
