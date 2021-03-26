@@ -1107,7 +1107,7 @@ emailButton.addEventListener("click", () => {
     cuisineSelection,
     recipeIndex,
     portionSelection
-  )}<br>${mailCookDirections(cuisineSelection, recipeIndex)}`;
+  )}<br>${mailCookDirections(cuisineSelection, recipeIndex)}<br><br>Visit our website for more aewsome recipes:<br>https://lucamilanese90.github.io/foodLoops`;
   sendEmail();
 });
 
